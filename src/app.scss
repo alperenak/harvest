@@ -1,0 +1,86 @@
+@import './helpers/responsiveBreakpointsMixins.scss';
+
+
+* {
+  box-sizing: border-box;
+}
+
+.App {
+
+
+  // width: calc(100% - 208px);
+  // height: calc(100% - 144px);
+  // padding: 112px 64px 32px 144px;
+  // position: relative;
+
+
+  &.fullScreen {
+    width: unset;
+
+
+    // @include small {
+    //   padding: 112px 5% 32px 5%;
+    // }
+    &.paddingTop{
+      padding-top: 82px;
+    }
+  }
+
+  & .hidden {
+    bottom: -100px !important;
+    opacity: 0!important;
+  }
+
+  & .myCookie {
+
+    & * {
+      box-sizing: content-box;
+    }
+    transition: .8s cubic-bezier(0.48, -0.62, 0.51, 1.68);
+    opacity: 1;
+    max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+    visibility: visible;
+    background-color: #3f5572;
+    padding: 10px;
+    flex-flow: row;
+    color: white;
+    bottom: 0px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    right: 0px;
+    left: 0px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 3px, rgba(0, 0, 0, 0.24) 0px 0px 2px;
+    z-index: 900;
+    text-align: center;
+    opacity: 0.8;
+
+  }
+
+
+  & .temp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  & a {
+    text-decoration: none;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: #2c3f58 !important;
+  }
+}
+
+.bold {
+  font-weight: bold;
+  font-family: "Sofia Pro Bold";
+}

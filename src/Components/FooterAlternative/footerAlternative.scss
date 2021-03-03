@@ -1,0 +1,116 @@
+@import '../../helpers/responsiveBreakpointsMixins.scss';
+
+.footerSection2 {
+	width: 100%;
+	padding-top:20px;
+	padding-bottom: 20px;
+	background-color: #f6f8fa;
+    &__options {
+
+      width: 100%;
+	  display: flex;
+	  justify-content: flex-end;
+      &__links{
+          flex-direction: row;
+
+          @include medium {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+        & .dot{
+            height: 2px;
+            width: 2px;
+            background-color: black;
+            border-radius: 50%;
+            display: inline-block;
+        }
+      }
+
+
+      @include medium {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+
+        @include medium {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin: 24px 0;
+        }
+
+        & a {
+          text-decoration: none;
+          color: black;
+        }
+
+      }
+
+
+      & li {
+        color: #fff;
+        list-style-type: none;
+        cursor: pointer;
+        font-size: calc(2px + 14px);
+        padding: 2.5px 0;
+        text-align: center;
+        letter-spacing: normal;
+        width: 120px;
+        display: inline;
+        margin-right: 1rem;
+
+        & a {
+          color: black;
+        }
+
+        @include small {
+          font-size: calc(2px + 12px);
+
+        }
+
+        &:hover {
+          font-family: "Sofia Pro Bold";
+        }
+      }
+    }
+
+
+
+
+  &__stroke {
+    height: 1px;
+    background-color: black;
+    width: 100%;
+    margin: 40px 0 20px;
+  }
+  	&__followUs {
+    display: flex;
+    justify-content: center;
+
+    & img {
+  	width: 15px;
+  	margin: 0 20px;
+    }
+  }
+  &__rights {
+    width: 100%;
+    font-family: "Sofia Pro";
+    font-size: calc(2px + 12px);
+    color: black;
+    list-style-type: none;
+    line-height: 1.5em;
+    letter-spacing: 0.1px;
+    margin-bottom: 20px;
+	text-align: left;
+  }
+}

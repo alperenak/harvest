@@ -1,0 +1,132 @@
+@import "../../helpers/responsiveBreakpointsMixins.scss";
+
+.strong {
+  font-family: "Sofia Pro Bold";
+}
+.subBar {
+  top: 0;
+  right: 0;
+  box-shadow: 0 2px 8px 0 rgba(3, 0, 13, 0.07);
+  z-index: 100;
+  background-color: #ffffff;
+  width: 100%;
+  position: relative;
+  margin-top: 90px;
+  display: block;
+  align-items: center;
+
+  &__container {
+    display: flex;
+    width: 100%;
+    @media screen and (max-width: 600px) {
+      &__icon {
+        display: none;
+      }
+      &__requestIcon {
+        display: none;
+      }
+      &__deliveryIcon {
+        display: none;
+      }
+      &__downIcon {
+        display: none;
+      }
+      &__orderFrom {
+        display: none;
+        &__top {
+          display: none;
+        }
+        &__bottom {
+          display: none;
+        }
+      }
+    }
+    @media screen and (min-width: 600px) {
+      &__icon {
+        width: 36px;
+        height: 36px;
+        margin: 17px 0;
+      }
+      &__requestIcon {
+        width: 36px;
+        height: 36px;
+        margin: 17px 30px;
+      }
+      &__deliveryIcon {
+        width: 36px;
+        height: 36px;
+        margin: 17px 0px 17px 40px;
+      }
+      &__downIcon {
+        margin: 17px 10px;
+      }
+      &__orderFrom {
+        margin: 17px 12px;
+        font-size: 12px;
+        &__top {
+          font-family: "Sofia Pro Bold";
+          display: block;
+        }
+        &__bottom {
+          font-family: "Sofia Pro Bold";
+          display: block;
+          color: #f0592a;
+        }
+      }
+    }
+
+    @media screen and (min-width: 600px) {
+      &__menu {
+        margin-left: 80px;
+        & ul {
+          list-style: none;
+          padding: 0px !important;
+          margin: 0px !important;
+          & li {
+            padding: 27px 0;
+            float: left;
+            font-family: "Sofia Pro Bold";
+            margin-right: 30px;
+            font-size: 14px;
+            & a {
+              color: #14181c;
+            }
+            &.active {
+              border-bottom: 1px solid #f0592a;
+              & a {
+                color: #f0592a !important;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      &__menu {
+        margin-top: 55px;
+        & ul {
+          list-style: none;
+          padding: 0px !important;
+          margin: 0px !important;
+          & li {
+            padding: 7px 0;
+            float: left;
+            font-family: "Sofia Pro Bold";
+            margin-right: 10px;
+            font-size: 14px;
+            & a {
+              color: #14181c;
+            }
+            &.active {
+              border-bottom: 1px solid #f0592a;
+              & a {
+                color: #f0592a !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
