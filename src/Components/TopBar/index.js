@@ -100,6 +100,7 @@ class TopBar extends Component {
   getTotalPrice() {
     return 12;
   }
+
   render() {
     console.log(this.state.isScrolled);
     let topBarClass = "";
