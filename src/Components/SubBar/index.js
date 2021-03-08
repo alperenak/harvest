@@ -58,7 +58,7 @@ class SubBar extends Component {
       };
     }
     let res = await store.getRestaurant(payload);
-    if (res.data.vintageItems && res.data.vintageItems.length > 0) {
+    if (res.data?.vintageItems && res.data.vintageItems.length > 0) {
       this.setState({ vintageShow: true });
     } else {
       this.setState({ vintageShow: false });
@@ -81,6 +81,7 @@ class SubBar extends Component {
     };
     let res = await store.getRestaurant(payload);
     if (res) {
+      console.log(res);
       if (res.data.restaurants) {
         setCookie("slug", res.data.restaurants.slug, {});
       }
@@ -171,7 +172,7 @@ class SubBar extends Component {
                                   ) : (
                                     <span className={"strong"}>
                                       {" "}
-                                      {item.name}{" "}
+                                      {item.name}sad{" "}
                                     </span>
                                   )}
                                 </li>

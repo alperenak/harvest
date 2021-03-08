@@ -1,24 +1,37 @@
 @font-face {
-
-  font-family: 'Sofia Pro';
-
-  src: url('./assets/SofiaProRegular.ttf'); /* IE9 Compat Modes */
-
-  src: local('Sofia Pro'), local('SofiaPro'),
-
-  url('./assets/SofiaProRegular.ttf') format('truetype'); /* Safari, Android, iOS */
-
+  font-family: "Sofia Pro";
+  src: url(./assets/fonts/SofiaProRegular.woff);
 }
 
 @font-face {
-  font-family: 'Sofia Pro Bold';
+  font-family: SofiaMedium;
+  src: url(./assets/fonts/SofiaPro-Medium.woff);
+}
 
-  src: url('./assets/Sofia Pro Bold.ttf'); /* IE9 Compat Modes */
+@font-face {
+  font-family: "Sofia Pro Bold";
+  src: url(./assets/fonts/SofiaPro-Bold.woff);
+}
 
-  src: local('Sofia Pro Bold'), local('SofiaProBold'),
+@font-face {
+  font-family: SofiaSemiBold;
+  src: url(./assets/fonts/SofiaPro-SemiBold.woff);
+}
 
-  url('./assets/Sofia Pro Bold.ttf') format('truetype'); /* Safari, Android, iOS */
+@font-face {
+  font-family: SofiaBlack;
+  src: url(./assets/fonts/SofiaPro-Black.woff);
+}
 
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -26,11 +39,12 @@ body {
   font-family: "Sofia Pro";
 }
 
-input, textarea {
+input,
+textarea {
   font-family: "Sofia Pro";
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

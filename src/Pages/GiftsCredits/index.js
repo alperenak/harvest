@@ -15,164 +15,157 @@ import store from "../../store";
 import { getCookie } from "../../utils/cookie";
 
 import styles from "./gifts.scss";
+import { OrdersIcon } from "../../icons";
+import SideMenuBar from "../../Components/SideMenuBar";
 
 class Gifts extends Component {
-state = {
-  coupons:null,
-  processing:true
-};
-async componentDidMount() {
-  if (getCookie("user") === null) {
-    window.location.pathname = `/`;
+  state = {
+    coupons: null,
+    processing: true,
+  };
+  async componentDidMount() {
+    if (getCookie("user") === null) {
+      window.location.pathname = `/`;
+    } else {
+      await this.getCoupons();
+    }
+    window.scrollTo(0, 0);
   }
-  else {
-    await this.getCoupons();
-  }
-  window.scrollTo(0, 0);
-}
-getCoupons = async () => {
-  let res = await store.getCoupons();
-  if (res) {
-    console.log(res.data.coupons)
-    this.setState({
-      coupons: res.data.coupons,
-      processing: false
-    });
-  }
-};
-render() {
-const options = {
-items: 4,
-nav: false,
-dots:false,
-autoplayTimeout:2500,
-rewind: true,
-autoplay: true,
-responsive:{
-0:{
-items:1
-},
-768 : {
-items:4
-}
-}
-};
-let { items } = this.state;
-return (
-  <>
-  {
-    this.state.processing === true &&
-    <LoadingModal text="Loading" />
-  }
-  { this.state.processing !== true &&
-    <div className={"Gifts"}>
-    <div className="container">
-        <div className="row">
-            <div className="col-lg-4 col-md-4 col-xs-12">
-            <div className={"Gifts__newBlock"}>
-                <div className="container"> 
-                    <ul className={"leftDropMenu"} >
-                          <li>
-                            <Link to="/Orders">
-                              <div className={"dropDownImage"}>
-                                <img src={ordersIcon} alt={ordersIcon} />
-                              </div>
-                              <div className={"menuTitle"}>
-                                Your Orders
-                              </div>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link to="/AccountSettings">
-                              <div className={"dropDownImage"}>
-                                <img src={accountIcon} alt={accountIcon} />
-                              </div>
-                              <div className={"menuTitle"}>
-                                Account Settings
-                              </div>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link to="/Addresses">
-                              <div className={"dropDownImage"}>
-                                <img src={addressesIcon} alt={addressesIcon} />
-                              </div>
-                              <div className={"menuTitle"}>
-                                Addresses
-                              </div>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link to="/PaymentMethods">
-                              <div className={"dropDownImage"}>
-                                <img src={paymentIcon} alt={paymentIcon} />
-                              </div>
-                              <div className={"menuTitle"}>
-                                Payment Methods
-                              </div>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link to="/Notifications">
-                              <div className={"dropDownImage"}>
-                                <img src={notificationIcon} alt={notificationIcon} />
-                              </div>
-                              <div className={"menuTitle"}>
-                                Notification
-                              </div>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link to="/Gifts">
-                              <div className={"dropDownImage"}>
-                                <img src={giftCardsIcon} alt={giftCardsIcon} />
-                              </div>
-                              <div className={"title active"}>
-                                Credits, promos & gift cards
-                              </div>
-                            </Link>
-                          </li>
-                          <li></li>
-                          <li>
-                            <Link>
-                              <div className={"dropDownImage"}>
-                                <img src={inviteFriendsIcon} alt={inviteFriendsIcon} />
-                              </div>
-                              <div className={"menuTitle"}>
-                                Invite Friends
-                              </div>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link>
-                              <div className={"dropDownImage"}>
-                                <img src={helpIcon} alt={helpIcon} />
-                              </div>
-                              <div className={"menuTitle"}>
-                                Help
-                              </div>
-                            </Link>
-                          </li>
-                          <li></li>
-                          <li>
-                            <Link to="/Login">
-                              <div className={"dropDownImage"}>
-                                <img src={logoutIcon} alt={logoutIcon} />
-                              </div>
-                              <div className={"menuTitle"}>
-                                Logout
-                              </div>
-                            </Link>
-                          </li>
-                        </ul>    
-            
-                </div>
-            
-            </div>
-                
-            </div>
-            <div className="col-md-8 col-lg-8 col-xs-12">
-                {/* <div className={"Gifts__block"}>
+  getCoupons = async () => {
+    let res = await store.getCoupons();
+    if (res) {
+      console.log(res.data.coupons);
+      this.setState({
+        coupons: res.data.coupons,
+        processing: false,
+      });
+    }
+  };
+  render() {
+    const options = {
+      items: 4,
+      nav: false,
+      dots: false,
+      autoplayTimeout: 2500,
+      rewind: true,
+      autoplay: true,
+      responsive: {
+        0: {
+          items: 1,
+        },
+        768: {
+          items: 4,
+        },
+      },
+    };
+    let { items } = this.state;
+    let pathname = window.location.pathname;
+    return (
+      <>
+        {this.state.processing === true && <LoadingModal text="Loading" />}
+        {this.state.processing !== true && (
+          <div className={"Gifts"}>
+            <div className="container">
+              <div className="row">
+                {/* <div className="col-lg-4 col-md-4 col-xs-12">
+                  <div className={"Gifts__newBlock"}>
+                    <div className="container">
+                      <ul className={"leftDropMenu"}>
+                        <li className="sideBarMenuTitleWrapper">
+                          <Link to="/Orders">
+                            <div className={"dropDownImage"}>
+                              <OrdersIcon
+                                className={
+                                  pathname.includes("Orders")
+                                    ? "activeDropdownIcon"
+                                    : "topBarDropdownImage"
+                                }
+                              />
+                            </div>
+                            <div className={"menuTitle"}>Your Orders</div>
+                          </Link>
+                        </li>
+                        <li className="sideBarMenuTitleWrapper">
+                          <Link to="/AccountSettings">
+                            <div className={"dropDownImage"}>
+                              <img src={accountIcon} alt={accountIcon} />
+                            </div>
+                            <div className={"menuTitle"}>Account Settings</div>
+                          </Link>
+                        </li>
+                        <li className="sideBarMenuTitleWrapper">
+                          <Link to="/Addresses">
+                            <div className={"dropDownImage"}>
+                              <img src={addressesIcon} alt={addressesIcon} />
+                            </div>
+                            <div className={"menuTitle"}>Addresses</div>
+                          </Link>
+                        </li>
+                        <li className="sideBarMenuTitleWrapper">
+                          <Link to="/PaymentMethods">
+                            <div className={"dropDownImage"}>
+                              <img src={paymentIcon} alt={paymentIcon} />
+                            </div>
+                            <div className={"menuTitle"}>Payment Methods</div>
+                          </Link>
+                        </li>
+                        <li className="sideBarMenuTitleWrapper">
+                          <Link to="/Notifications">
+                            <div className={"dropDownImage"}>
+                              <img
+                                src={notificationIcon}
+                                alt={notificationIcon}
+                              />
+                            </div>
+                            <div className={"menuTitle"}>Notification</div>
+                          </Link>
+                        </li>
+                        <li className="sideBarMenuTitleWrapper">
+                          <Link to="/Gifts">
+                            <div className={"dropDownImage"}>
+                              <img src={giftCardsIcon} alt={giftCardsIcon} />
+                            </div>
+                            <div className={"title active"}>
+                              Credits, promos & gift cards
+                            </div>
+                          </Link>
+                        </li>
+                        <li className="sideBarMenuTitleWrapper"></li>
+                        <li className="sideBarMenuTitleWrapper">
+                          <Link>
+                            <div className={"dropDownImage"}>
+                              <img
+                                src={inviteFriendsIcon}
+                                alt={inviteFriendsIcon}
+                              />
+                            </div>
+                            <div className={"menuTitle"}>Invite Friends</div>
+                          </Link>
+                        </li>
+                        <li className="sideBarMenuTitleWrapper">
+                          <Link>
+                            <div className={"dropDownImage"}>
+                              <img src={helpIcon} alt={helpIcon} />
+                            </div>
+                            <div className={"menuTitle"}>Help</div>
+                          </Link>
+                        </li>
+                        <li className="sideBarMenuTitleWrapper"></li>
+                        <li className="sideBarMenuTitleWrapper">
+                          <Link to="/Login">
+                            <div className={"dropDownImage"}>
+                              <img src={logoutIcon} alt={logoutIcon} />
+                            </div>
+                            <div className={"menuTitle"}>Logout</div>
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div> */}
+                <SideMenuBar />
+                <div className="col-md-8 col-lg-8 col-xs-12">
+                  {/* <div className={"Gifts__block"}>
                         <div className="container"> 
                         <div className="Gifts__block__sectionSubTitle">
                         Apply discounts to your account
@@ -203,89 +196,86 @@ return (
                         </div>     
                 </div>
                 */}
-                <div className={"Gifts__block"}> 
-                        <div className="container"> 
-                        <div className="Gifts__block__sectionSubTitle">
-                        Promotions and discounts                       
+                  <div className={"Gifts__block"}>
+                    <div className="container">
+                      <div className="Gifts__block__sectionSubTitle">
+                        Promotions and discounts
+                      </div>
+                      <div className="row mt30">
+                        <div className="col-3 text-left">
+                          <span className="Addresses__block__leftPart">
+                            Coupon Name
+                          </span>
                         </div>
-                        <div className="row mt30">
-                          <div className="col-3 text-left">
-                            <span className="Addresses__block__leftPart">
-                              Coupon Name
-                            </span>
-                          </div>
-                          <div className="col-3 text-left">
-                            <span className="Addresses__block__leftPart">
-                              Coupon Code
-                            </span>
-                          </div>
-                          <div className="col-3 text-left">
-                            <span className="Addresses__block__sectionParagraph ">
-                              Coupon 
-                            </span>
-                          </div>
-                          <div className="col-3 text-right">
-                            <span className="Addresses__block__sectionParagraph ">
-                              Expire Date
-                            </span>
-                          </div>
+                        <div className="col-3 text-left">
+                          <span className="Addresses__block__leftPart">
+                            Coupon Code
+                          </span>
                         </div>
-                        <div className="hrLine"></div>
-                        { this.state.coupons !== null && this.state.coupons.map((item, index) => (
-                      <>
-                      
-                        <div className="row mt30">
-                          <div className="col-3 text-left">
-                            <span className="Addresses__block__leftPart">
-                              {item.name}
-                            </span>
-                          </div>
-                          <div className="col-3 text-left">
-                            <span className="Addresses__block__leftPart">
-                              {item.code}
-                            </span>
-                          </div>
-                          <div className="col-3 text-left">
-                            <span className="Addresses__block__sectionParagraph oranged">
-                              { item.discount_type === "PERCENTAGE" ? (
-                                <>
-                                % {item.discount}
-                                </>
-                              ):(
-                                <>
-                                $ {item.discount}
-                                </>
-                              )}
-                            </span>
-                          </div>
-                          <div className="col-3 text-right">
-                            <span className="Addresses__block__sectionParagraph oranged">
-                              {item.expire_date}
-                            </span>
-                          </div>
+                        <div className="col-3 text-left">
+                          <span className="Addresses__block__sectionParagraph ">
+                            Coupon
+                          </span>
                         </div>
-                        <div className="hrLine"></div>
-                      </>
-                            ))
-                      }
-                      { this.state.coupons === null &&
+                        <div className="col-3 text-right">
+                          <span className="Addresses__block__sectionParagraph ">
+                            Expire Date
+                          </span>
+                        </div>
+                      </div>
+                      <div className="hrLine"></div>
+                      {this.state.coupons !== null &&
+                        this.state.coupons.map((item, index) => (
+                          <>
+                            <div className="row mt30">
+                              <div className="col-3 text-left">
+                                <span className="Addresses__block__leftPart">
+                                  {item.name}
+                                </span>
+                              </div>
+                              <div className="col-3 text-left">
+                                <span className="Addresses__block__leftPart">
+                                  {item.code}
+                                </span>
+                              </div>
+                              <div className="col-3 text-left">
+                                <span className="Addresses__block__sectionParagraph oranged">
+                                  {item.discount_type === "PERCENTAGE" ? (
+                                    <>% {item.discount}</>
+                                  ) : (
+                                    <>$ {item.discount}</>
+                                  )}
+                                </span>
+                              </div>
+                              <div className="col-3 text-right">
+                                <span className="Addresses__block__sectionParagraph oranged">
+                                  {item.expire_date}
+                                </span>
+                              </div>
+                            </div>
+                            <div className="hrLine"></div>
+                          </>
+                        ))}
+                      {this.state.coupons === null && (
                         <>
                           <div className="hrLine"></div>
-                          <div className="Gifts__block__paragraph mt30"> You have no active promotions. </div>
+                          <div className="Gifts__block__paragraph mt30">
+                            {" "}
+                            You have no active promotions.{" "}
+                          </div>
                         </>
-                      }
-                        </div>     
+                      )}
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
-
-    </div>
-    <Footer />
-</div>
+            <Footer />
+          </div>
+        )}
+      </>
+    );
   }
-  </>
-);
-}
 }
 
 export default Gifts;

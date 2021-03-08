@@ -50,8 +50,7 @@ let store = {
     let baseUrl = config.baseUrl;
     let path = `/get-restaurant-items/dsadsa-oibXRr32h7VUYXJ`;
     let tokenCookieName = "token";
-    let payload = {
-    };
+    let payload = {};
     return await http.makePostRequest(
       path,
       baseUrl,
@@ -62,11 +61,10 @@ let store = {
   },
   async getRestaurant(payload) {
     let baseUrl = config.baseUrl;
-    var marketType = localStorage.getItem("marketType")
-    if(!marketType || marketType=="harvest-market")
+    var marketType = localStorage.getItem("marketType");
+    if (!marketType || marketType == "harvest-market")
       var path = `/get-harvestmarket`;
-    else
-      var path = `/get-harvestmarket`;
+    else var path = `/get-harvestmarket`;
     let tokenCookieName = "token";
     return await http.makePostRequest(
       path,
@@ -78,10 +76,9 @@ let store = {
   },
   async getFoodCourts(slug) {
     let baseUrl = config.baseUrl;
-    let path = `/get-restaurant-food-courts/`+slug;
+    let path = `/get-restaurant-food-courts/` + slug;
     let tokenCookieName = "token";
-    let payload = {
-    };
+    let payload = {};
     return await http.makePostRequest(
       path,
       baseUrl,
@@ -108,7 +105,7 @@ let store = {
     let path = `/get-single-item`;
     let tokenCookieName = "token";
     let payload = {
-      id
+      id,
     };
     return await http.makePostRequest(
       path,
@@ -120,7 +117,7 @@ let store = {
   },
   async getRestaurantFoodItems(payload, slug) {
     let baseUrl = config.baseUrl;
-    let path = `/get-restaurant-items/`+slug;
+    let path = `/get-restaurant-items/` + slug;
     let tokenCookieName = "token";
     return await http.makePostRequest(
       path,
@@ -132,9 +129,9 @@ let store = {
   },
   async getFoodItemsW(payload, slug) {
     let baseUrl = config.baseUrl;
-    let path = `/get-restaurant-items/`+slug;
+    let path = `/get-restaurant-items/` + slug;
     let tokenCookieName = "token";
-    return await http.makePostRequest(
+    return await http.makeGetRequest(
       path,
       baseUrl,
       tokenCookieName,
@@ -147,8 +144,8 @@ let store = {
     let path = `/get-orders`;
     let tokenCookieName = "token";
     let payload = {
-      user_id:getCookie("user_id"),
-			token:getCookie("token")
+      user_id: getCookie("user_id"),
+      token: getCookie("token"),
     };
     return await http.makePostRequest(
       path,
@@ -163,8 +160,8 @@ let store = {
     let path = `/payment/getCards`;
     let tokenCookieName = "token";
     let payload = {
-      user_id:getCookie("user_id"),
-			token:getCookie("token")
+      user_id: getCookie("user_id"),
+      token: getCookie("token"),
     };
     return await http.makePostRequest(
       path,
@@ -179,8 +176,8 @@ let store = {
     let path = `/user/getCoupons`;
     let tokenCookieName = "token";
     let payload = {
-      user_id:getCookie("user_id"),
-			token:getCookie("token")
+      user_id: getCookie("user_id"),
+      token: getCookie("token"),
     };
     return await http.makePostRequest(
       path,
@@ -219,8 +216,8 @@ let store = {
     let path = `/delete-address`;
     let tokenCookieName = "token";
     let payload = {
-      address_id:id,
-      user_id:getCookie("user_id"),
+      address_id: id,
+      user_id: getCookie("user_id"),
     };
     return await http.makePostRequest(
       path,
@@ -235,7 +232,7 @@ let store = {
     let path = `/payment/deleteCard`;
     let tokenCookieName = "token";
     let payload = {
-      card_id:id
+      card_id: id,
     };
     return await http.makePostRequest(
       path,
@@ -250,8 +247,8 @@ let store = {
     let path = `/user/getUser`;
     let tokenCookieName = "token";
     let payload = {
-      user_id:getCookie("user_id"),
-			token:getCookie("token")
+      user_id: getCookie("user_id"),
+      token: getCookie("token"),
     };
     return await http.makePostRequest(
       path,
@@ -266,8 +263,8 @@ let store = {
     let path = `/user/getCoupons`;
     let tokenCookieName = "token";
     let payload = {
-      user_id:getCookie("user_id"),
-			token:getCookie("token")
+      user_id: getCookie("user_id"),
+      token: getCookie("token"),
     };
     return await http.makePostRequest(
       path,

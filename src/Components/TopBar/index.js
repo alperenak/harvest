@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 /*** Components ***/
 import Button from "../Button";
-import { getCookie, setCookie } from "../../utils/cookie";
+import { getCookie } from "../../utils/cookie";
 
 /*** Styles ***/
 import styles from "./topBar.scss";
@@ -22,10 +22,20 @@ import closeIcoon from "../../icons/popup-close.svg";
 import shoppingCartIcon from "../../icons/shopping-cart-icon.svg";
 import harvestTrolleyIcon from "../../icons/HarvestTrolley-icon.svg";
 import SearchIcon from "../../icons/search.svg";
-import meats from "../../assets/meats.jpg";
 import trash from "../../icons/trash_white.svg";
 import downArrowIcon from "../../icons/down-arrow.svg";
 import { eraseCookie } from "../../utils/cookie";
+import {
+  AccountIcon,
+  AddressesIcon,
+  GiftCardsIcon,
+  HelpIcon,
+  InviteFriendsIcon,
+  LogoutIcons,
+  NotificationIcon,
+  OrdersIcon,
+  PaymentIcon,
+} from "../../icons";
 
 class TopBar extends Component {
   state = {
@@ -109,7 +119,7 @@ class TopBar extends Component {
     topBarClass = this.state.isScrolled
       ? `${"topBar"} ${"topBar__fullScreen"} ${"topBar__scroll"}`
       : `${"topBar"} ${"topBar__fullScreen"} ${"topBar__nonscroll"}`;
-
+    let pathname = window.location.pathname;
     return (
       <div className={topBarClass}>
         <div className={"topBar__tile"}>
@@ -163,7 +173,6 @@ class TopBar extends Component {
                       >
                         <Button
                           type={"link"}
-                          sizeName={"default"}
                           text={getCookie("user")}
                           icon={ordersIcon}
                           rightIcon={downArrowIcon}
@@ -176,105 +185,209 @@ class TopBar extends Component {
                           }
                         />
                       </div>
-                      {this.state.ourDropdown == true && (
+                      {true && (
                         <div
                           className={
                             "topBar__links__dropdownContainer__dropdown"
                           }
                         >
-                          <ul className={"dropDownWrapper"}>
+                          <ul
+                            className={` ${
+                              !this.state.ourDropdown
+                                ? "dropDownWrapperScaleOut"
+                                : "dropDownWrapper"
+                            }`}
+                          >
                             <li>
                               <div className={"title"}>
                                 Hi, {getCookie("user")}
                               </div>
                             </li>
                             <li></li>
-                            <li>
+                            <li
+                              className="active"
+                              onClick={() =>
+                                this.setState({ ourDropdown: false })
+                              }
+                            >
                               <Link to="/Orders">
                                 <div className={"dropDownImage"}>
-                                  <img src={ordersIcon} alt={ordersIcon} />
+                                  <OrdersIcon
+                                    className={
+                                      pathname.includes("Orders")
+                                        ? "activeDropdownIcon"
+                                        : "topBarDropdownImage"
+                                    }
+                                  />
                                 </div>
-                                <div className={"title"}>Your Orders</div>
+                                <div
+                                  className={`title ${
+                                    pathname.includes("Orders") && "active"
+                                  }`}
+                                >
+                                  Your Orders
+                                </div>
                               </Link>
                             </li>
-                            <li>
+                            <li
+                              onClick={() =>
+                                this.setState({ ourDropdown: false })
+                              }
+                            >
                               <Link to="/AccountSettings">
                                 <div className={"dropDownImage"}>
-                                  <img src={accountIcon} alt={accountIcon} />
+                                  <AccountIcon
+                                    className={
+                                      pathname.includes("AccountSettings")
+                                        ? "activeDropdownIcon"
+                                        : "topBarDropdownImage"
+                                    }
+                                  />
                                 </div>
-                                <div className={"title active"}>
+                                <div
+                                  className={`title ${
+                                    pathname.includes("AccountSettings") &&
+                                    "active"
+                                  }`}
+                                >
                                   Account Settings
                                 </div>
                               </Link>
                             </li>
-                            <li>
+                            <li
+                              onClick={() =>
+                                this.setState({ ourDropdown: false })
+                              }
+                            >
                               <Link to="/Addresses">
                                 <div className={"dropDownImage"}>
-                                  <img
-                                    src={addressesIcon}
-                                    alt={addressesIcon}
+                                  <AddressesIcon
+                                    className={
+                                      pathname.includes("Addresses")
+                                        ? "activeDropdownIcon"
+                                        : "topBarDropdownImage"
+                                    }
                                   />
                                 </div>
-                                <div className={"title"}>Addresses</div>
+                                <div
+                                  className={`title ${
+                                    pathname.includes("Addresses") && "active"
+                                  }`}
+                                >
+                                  Addresses
+                                </div>
                               </Link>
                             </li>
-                            <li>
+                            <li
+                              onClick={() =>
+                                this.setState({ ourDropdown: false })
+                              }
+                            >
                               <Link to="/PaymentMethods">
                                 <div className={"dropDownImage"}>
-                                  <img src={paymentIcon} alt={paymentIcon} />
+                                  <PaymentIcon
+                                    className={
+                                      pathname.includes("PaymentMethods")
+                                        ? "activeDropdownIcon"
+                                        : "topBarDropdownImage"
+                                    }
+                                  />
                                 </div>
-                                <div className={"title"}>Payment Methods</div>
+                                <div
+                                  className={`title ${
+                                    pathname.includes("PaymentMethods") &&
+                                    "active"
+                                  }`}
+                                >
+                                  Payment Methods
+                                </div>
                               </Link>
                             </li>
-                            <li>
+                            <li
+                              onClick={() =>
+                                this.setState({ ourDropdown: false })
+                              }
+                            >
                               <Link to="/Notifications">
                                 <div className={"dropDownImage"}>
-                                  <img
-                                    src={notificationIcon}
-                                    alt={notificationIcon}
+                                  <NotificationIcon
+                                    className={
+                                      pathname.includes("Notifications")
+                                        ? "activeDropdownIcon"
+                                        : "topBarDropdownImage"
+                                    }
                                   />
                                 </div>
-                                <div className={"title"}>Notification</div>
+                                <div
+                                  className={`title ${
+                                    pathname.includes("Notifications") &&
+                                    "active"
+                                  }`}
+                                >
+                                  Notification
+                                </div>
                               </Link>
                             </li>
-                            <li>
+                            <li
+                              onClick={() =>
+                                this.setState({ ourDropdown: false })
+                              }
+                            >
                               <Link to="/Gifts">
                                 <div className={"dropDownImage"}>
-                                  <img
-                                    src={giftCardsIcon}
-                                    alt={giftCardsIcon}
+                                  <GiftCardsIcon
+                                    className={
+                                      pathname.includes("Gifts")
+                                        ? "activeDropdownIcon"
+                                        : "topBarDropdownImage"
+                                    }
                                   />
                                 </div>
-                                <div className={"title"}>
+                                <div
+                                  className={`title ${
+                                    pathname.includes("Gifts") && "active"
+                                  }`}
+                                >
                                   Credits, promos & gift cards
                                 </div>
                               </Link>
                             </li>
                             <li></li>
-                            <li>
+                            <li
+                              onClick={() =>
+                                this.setState({ ourDropdown: false })
+                              }
+                            >
                               <Link>
                                 <div className={"dropDownImage"}>
-                                  <img
-                                    src={inviteFriendsIcon}
-                                    alt={inviteFriendsIcon}
+                                  <InviteFriendsIcon
+                                    className={"topBarDropdownImage"}
                                   />
                                 </div>
-                                <div className={"title"}>Invite Friends</div>
+                                <div className={`title`}>Invite Friends</div>
                               </Link>
                             </li>
-                            <li>
+                            <li
+                              onClick={() =>
+                                this.setState({ ourDropdown: false })
+                              }
+                            >
                               <Link>
                                 <div className={"dropDownImage"}>
-                                  <img src={helpIcon} alt={helpIcon} />
+                                  <HelpIcon className={"topBarDropdownImage"} />
                                 </div>
                                 <div className={"title"}>Help</div>
                               </Link>
                             </li>
                             <li></li>
-                            <li>
+                            <li
+                              onClick={() =>
+                                this.setState({ ourDropdown: false })
+                              }
+                            >
                               <Link to="#" onClick={this.logout}>
                                 <div className={"dropDownImage"}>
-                                  <img src={logoutIcon} alt={logoutIcon} />
+                                  <LogoutIcons className="topBarDropdownImage" />
                                 </div>
                                 <div className={"title"}>Logout</div>
                               </Link>

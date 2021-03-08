@@ -22,7 +22,7 @@ class Button extends Component {
             <Fragment>
                 {(icon && iconPosition.includes('left')) && <img src={icon} alt="" className={`${iconPosition+'-icon'} ${(iconAutoWidth?"autoWidth":'')}`} />}
                 {(icon && hoverIcon && iconPosition.includes('left') && !disabled) && <img src={hoverIcon} alt="" className={`${iconPosition+'-icon'} ${"hoverIcon"} ${(iconAutoWidth?"autoWidth":'')}`} />}
-                {(icon && !hoverIcon && iconPosition.includes('left')) && <img src={icon} alt="" className={`${iconPosition+'-icon'} ${"hoverIcon"} ${(iconAutoWidth?"autoWidth":'')}`} />}
+                {/* {(icon && !hoverIcon && iconPosition.includes('left')) && <img src={icon} alt="" className={`${iconPosition+'-icon'} ${"hoverIcon"} ${(iconAutoWidth?"autoWidth":'')}`} />} */}
                 <img hidden={!loading} src={loadingIcon} alt={'loading'} />
                 {(icon && iconPosition.includes('center')) && <img src={icon} alt="" className={`${iconPosition+'-icon'} ${(iconAutoWidth?"autoWidth":'')}`} />}
                 {(icon && hoverIcon && iconPosition.includes('center') && !disabled) && <img src={hoverIcon} alt="" className={`${iconPosition+'-icon'} ${"hoverIcon"} ${(iconAutoWidth?"autoWidth":'')}`} />}
