@@ -1,5 +1,23 @@
 @import "../../helpers/responsiveBreakpointsMixins.scss";
 .Checkout {
+  & .responsiveRow {
+    @include large {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  & .responsiveCol {
+    @include large {
+      flex: 0 0 100%;
+      max-width: 100%;
+      position: relative;
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
   &__block {
     display: flex;
     flex-direction: column;
@@ -81,6 +99,7 @@
     &__deliveryDates {
       display: flex;
       margin-top: 20px;
+      overflow-x: auto;
       &__deliveryDate {
         flex: 1;
         border-radius: 8px;
