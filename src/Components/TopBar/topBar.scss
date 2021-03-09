@@ -11,13 +11,62 @@
   z-index: 8888888888888888;
   display: flex;
   align-items: center;
-  @media screen and (min-width: 600px) {
-    &__rightSide {
-      display: flex;
-      justify-content: flex-end;
+  &__rightSide {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .row {
+    @include medium {
+      flex-wrap: nowrap;
     }
   }
+  .topBarMenuButton {
+    border-radius: 8px;
+    border: solid 1px #d5d4d9;
+    width: 190px;
+    height: 48px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 450px) {
+      width: 75px;
+    }
 
+    & .topBarMenuButtonLeftSide {
+      width: 24px;
+      height: 24px;
+      overflow: hidden;
+      border-radius: 50%;
+      left: 15px;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      & .topBarMenuButtonLeftSideIcon {
+        height: 100%;
+      }
+    }
+    & .topBarMenuButtonTitle {
+      left: 50px;
+      font-size: 14px;
+      font-weight: "Sofia Pro Bold";
+      color: #292929;
+      position: absolute;
+      @media screen and (max-width: 450px) {
+        display: none;
+      }
+    }
+    & .topBarMenuButtonRightSide {
+      position: absolute;
+      right: 15px;
+      & .topBarMenuButtonRightSideIcon {
+        width: 10px;
+        height: 6px;
+        margin-bottom: 4px;
+      }
+    }
+  }
   .topBarDropdownImage {
     width: 24px;
     transition: all 0.2s;
@@ -35,6 +84,12 @@
     justify-content: center;
     position: relative;
     width: 100%;
+    @include large {
+      width: 200px;
+    }
+    @include medium {
+      display: none;
+    }
   }
 
   &__input {
@@ -93,7 +148,6 @@
         justify-content: center;
         align-items: center;
         border-radius: 8px;
-        border: solid 1px #d5d4d9;
         &__dropdown {
           position: absolute;
           top: 58px;
@@ -101,14 +155,17 @@
         }
       }
     }
+    .withBorder {
+      border: solid 1px #d5d4d9;
+      height: 48px;
+    }
     @media screen and (max-width: 600px) {
       &__dropdownContainer {
         position: relative;
         display: flex;
         justify-content: center;
-        align-items: center;
         border-radius: 8px;
-        border: solid 1px #d5d4d9;
+        align-items: center;
         &__dropdown {
           position: absolute;
           top: 58px;
@@ -500,173 +557,180 @@
   }
 }
 
-@media screen and (min-width: 600px) {
-  .dropDownWrapperScaleOut {
-    animation: scale-out-center 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-    position: relative;
-    margin: 0;
-    padding: 20px 10px;
-    width: 340px;
+.dropDownWrapperScaleOut {
+  animation: scale-out-center 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  position: relative;
+  margin: 0;
+  padding: 20px 10px;
+  width: 340px;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px 0 rgba(3, 0, 13, 0.15);
+  @media screen and (max-width: 600px) {
+    right: 140px;
+    width: 75vw;
+  }
+  @media screen and (max-width: 400px) {
+    right: 100px;
+    height: 75vh !important;
+    overflow-y: scroll;
+  }
+  background-color: #ffffff;
+  & li,
+  a {
+    display: flex;
+    font-family: "Sofia Pro";
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.19;
+    letter-spacing: normal;
+    text-align: left;
+    font-size: 14px;
+    list-style: none;
+    color: #484848;
     border-radius: 12px;
-    box-shadow: 0 2px 16px 0 rgba(3, 0, 13, 0.15);
-    background-color: #ffffff;
-    & li,
-    a {
-      display: flex;
-      font-family: "Sofia Pro";
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.19;
-      letter-spacing: normal;
-      text-align: left;
-      font-size: 14px;
-      list-style: none;
-      color: #484848;
-      border-radius: 12px;
-      padding: 6px 8px;
-      margin: 4px 0;
-      text-decoration: none;
-      transition: all 0.2s;
-      @include small {
-        font-size: 13px;
+    padding: 6px 8px;
+    margin: 4px 0;
+    text-decoration: none;
+    transition: all 0.2s;
+    @include small {
+      font-size: 13px;
+    }
+
+    &:hover {
+      a,
+      li {
+        color: #f0592a;
+        font-weight: 100;
       }
 
-      &:hover {
-        a,
-        li {
-          color: #f0592a;
-          font-weight: 100;
-        }
-
-        & .topBarDropdownImage {
-          fill: #f0592a;
-        }
+      & .topBarDropdownImage {
+        fill: #f0592a;
       }
+    }
 
-      &.selected {
-        background-color: rgba(#2c3f58, 0.08);
-        color: #2c3f58;
-
-        & .icon {
-          background-color: transparent;
-        }
-      }
-
-      & .messageContainer {
-        display: flex;
-        flex-direction: column;
-      }
+    &.selected {
+      background-color: rgba(#2c3f58, 0.08);
+      color: #2c3f58;
 
       & .icon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 30px;
-        width: 30px;
-        border-radius: 50%;
-        padding: 5px;
-        background-color: rgba(#2c3f58, 0.08);
+        background-color: transparent;
+      }
+    }
 
-        &.read {
-          height: 0.2px;
-          width: 0.2px;
-          background-color: #2c3f58;
-          margin-left: 20px;
-        }
+    & .messageContainer {
+      display: flex;
+      flex-direction: column;
+    }
 
-        & > img {
-          width: 15px;
-          height: 15px;
-        }
+    & .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      padding: 5px;
+      background-color: rgba(#2c3f58, 0.08);
+
+      &.read {
+        height: 0.2px;
+        width: 0.2px;
+        background-color: #2c3f58;
+        margin-left: 20px;
+      }
+
+      & > img {
+        width: 15px;
+        height: 15px;
       }
     }
   }
-  .dropDownWrapper {
-    position: relative;
-    animation: scale-in-center 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    margin: 0;
-    padding: 20px 10px;
-    width: 340px;
+}
+.dropDownWrapper {
+  position: relative;
+  animation: scale-in-center 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  margin: 0;
+  padding: 20px 10px;
+  width: 340px;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px 0 rgba(3, 0, 13, 0.15);
+  background-color: #ffffff;
+
+  & li,
+  a {
+    display: flex;
+    font-family: "Sofia Pro";
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.19;
+    letter-spacing: normal;
+    text-align: left;
+    font-size: 14px;
+    list-style: none;
+    color: #484848;
     border-radius: 12px;
-    box-shadow: 0 2px 16px 0 rgba(3, 0, 13, 0.15);
-    background-color: #ffffff;
+    padding: 6px 8px;
+    margin: 4px 0;
+    text-decoration: none;
+    transition: all 0.2s;
+    @include small {
+      font-size: 13px;
+    }
 
-    & li,
-    a {
-      display: flex;
-      font-family: "Sofia Pro";
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.19;
-      letter-spacing: normal;
-      text-align: left;
-      font-size: 14px;
-      list-style: none;
-      color: #484848;
-      border-radius: 12px;
-      padding: 6px 8px;
-      margin: 4px 0;
-      text-decoration: none;
-      transition: all 0.2s;
-      @include small {
-        font-size: 13px;
+    &:hover {
+      a,
+      li {
+        color: #f0592a;
+        font-weight: 100;
       }
 
-      &:hover {
-        a,
-        li {
-          color: #f0592a;
-          font-weight: 100;
-        }
-
-        & .topBarDropdownImage {
-          fill: #f0592a;
-        }
+      & .topBarDropdownImage {
+        fill: #f0592a;
       }
+    }
 
-      &.selected {
-        background-color: rgba(#2c3f58, 0.08);
-        color: #2c3f58;
-
-        & .icon {
-          background-color: transparent;
-        }
-      }
-
-      & .messageContainer {
-        display: flex;
-        flex-direction: column;
-      }
+    &.selected {
+      background-color: rgba(#2c3f58, 0.08);
+      color: #2c3f58;
 
       & .icon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 30px;
-        width: 30px;
-        border-radius: 50%;
-        padding: 5px;
-        background-color: rgba(#2c3f58, 0.08);
+        background-color: transparent;
+      }
+    }
 
-        &.read {
-          height: 0.2px;
-          width: 0.2px;
-          background-color: #2c3f58;
-          margin-left: 20px;
-        }
+    & .messageContainer {
+      display: flex;
+      flex-direction: column;
+    }
 
-        & > img {
-          width: 15px;
-          height: 15px;
-        }
+    & .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      padding: 5px;
+      background-color: rgba(#2c3f58, 0.08);
+
+      &.read {
+        height: 0.2px;
+        width: 0.2px;
+        background-color: #2c3f58;
+        margin-left: 20px;
+      }
+
+      & > img {
+        width: 15px;
+        height: 15px;
       }
     }
   }
@@ -674,12 +738,18 @@
 @media screen and (max-width: 600px) {
   .dropDownWrapper {
     position: relative;
-    margin: 0;
     padding: 20px 10px;
-    width: 100%;
+    animation: scale-in-center 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    right: 140px;
+    width: 75vw;
     border-radius: 12px;
     box-shadow: 0 2px 16px 0 rgba(3, 0, 13, 0.15);
     background-color: #ffffff;
+    @media screen and (max-width: 400px) {
+      right: 100px;
+      height: 75vh !important;
+      overflow-y: scroll;
+    }
 
     & li,
     a {
@@ -764,8 +834,8 @@
   height: 24px;
   fill: #f0592a;
 }
-@media screen and (max-width: 600px) {
-  .linksSearch {
+.linksSearch {
+  @include medium {
     display: none !important;
   }
 }

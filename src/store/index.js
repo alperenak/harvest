@@ -131,7 +131,7 @@ let store = {
     let baseUrl = config.baseUrl;
     let path = `/get-restaurant-items/` + slug;
     let tokenCookieName = "token";
-    return await http.makeGetRequest(
+    return await http.makePostRequest(
       path,
       baseUrl,
       tokenCookieName,

@@ -10,14 +10,7 @@ import styles from "./topBar.scss";
 /*** Icons ***/
 import logo from "../../assets/logo.png";
 import ordersIcon from "../../icons/orders-icon.svg";
-import accountIcon from "../../icons/account-icon.svg";
-import addressesIcon from "../../icons/addresses-icon.svg";
-import paymentIcon from "../../icons/payment-icon.svg";
-import notificationIcon from "../../icons/notification-icon.svg";
-import giftCardsIcon from "../../icons/gift-cards-icon.svg";
-import inviteFriendsIcon from "../../icons/invite-friends-icon.svg";
-import helpIcon from "../../icons/help-icon.svg";
-import logoutIcon from "../../icons/logout-icons.svg";
+import Profile from "../../assets/pp.jpg";
 import closeIcoon from "../../icons/popup-close.svg";
 import shoppingCartIcon from "../../icons/shopping-cart-icon.svg";
 import harvestTrolleyIcon from "../../icons/HarvestTrolley-icon.svg";
@@ -45,6 +38,7 @@ class TopBar extends Component {
     searchValue: "",
     isScrolled: window.scrollY > 1 ? true : false,
     ourDropdown: false,
+    isOpenDropdown: false,
     cartItems: [],
   };
 
@@ -126,14 +120,14 @@ class TopBar extends Component {
           <div className="container"></div>
         </div>
         <div className="container">
-          <div className="row">
-            <div className="col-lg-2 col-md-2 col-xs-2">
-              <div className={"topBar__logo"}>
-                <Link to={"/"}>
-                  <img src={logo} alt={"logo"} />
-                </Link>
-              </div>
+          <div className="row d-flex align-items-center justify-content-center">
+            {/* <div className="col-lg-2 col-md-2 col-xs-2"> */}
+            <div className={"topBar__logo"}>
+              <Link to={"/"}>
+                <img src={logo} alt={"logo"} />
+              </Link>
             </div>
+            {/* </div> */}
             <div className="col-lg-6  col-md-6 col-xs-12 linksSearch">
               <div className={"topBar__links"}>
                 <div className={"topBar__inputWrapper"}>
@@ -159,22 +153,34 @@ class TopBar extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 col-md-4 col-xs-10 topBar__rightSide">
+            <div className="col-lg-4 col-md-4 col-xs-7 topBar__rightSide">
               <div className={"topBar__links"}>
                 {getCookie("user") != null && (
                   <Fragment>
                     <div className={"topBar__links__dropdownContainer"}>
                       <div
-                        onClick={() =>
+                        onClick={() => {
                           this.setState({
                             ourDropdown: !this.state.ourDropdown,
-                          })
-                        }
+                          });
+                          if (this.state.isOpenDropdown) {
+                            setTimeout(() => {
+                              this.setState({
+                                isOpenDropdown: false,
+                              });
+                            }, 220);
+                          } else {
+                            this.setState({
+                              isOpenDropdown: !this.state.isOpenDropdown,
+                            });
+                          }
+                        }}
                       >
-                        <Button
+                        {/* <Button
                           type={"link"}
                           text={getCookie("user")}
-                          icon={ordersIcon}
+                          icon={Profile}
+                          leftRounded={true}
                           rightIcon={downArrowIcon}
                           sizeName={"tiny"}
                           iconPosition={"left"}
@@ -183,9 +189,34 @@ class TopBar extends Component {
                               ? "topBar__links__scroll"
                               : "topBar__links__nonscroll"
                           }
-                        />
+                        /> */}
+                        <div
+                          className={`topBarMenuButton ${
+                            this.state.isScrolled
+                              ? "topBar__links__scroll"
+                              : "topBar__links__nonscroll"
+                          }`}
+                        >
+                          <div className="topBarMenuButtonLeftSide">
+                            <img
+                              src={Profile}
+                              alt=""
+                              className="topBarMenuButtonLeftSideIcon"
+                            />
+                          </div>
+                          <div className="topBarMenuButtonTitle">
+                            {getCookie("user")}
+                          </div>
+                          <div className="topBarMenuButtonRightSide">
+                            <img
+                              src={downArrowIcon}
+                              alt=""
+                              className="topBarMenuButtonRightSideIcon"
+                            />
+                          </div>
+                        </div>
                       </div>
-                      {true && (
+                      {this.state.isOpenDropdown && (
                         <div
                           className={
                             "topBar__links__dropdownContainer__dropdown"
@@ -206,9 +237,14 @@ class TopBar extends Component {
                             <li></li>
                             <li
                               className="active"
-                              onClick={() =>
-                                this.setState({ ourDropdown: false })
-                              }
+                              onClick={() => {
+                                setTimeout(() => {
+                                  this.setState({
+                                    isOpenDropdown: false,
+                                  });
+                                }, 220);
+                                this.setState({ ourDropdown: false });
+                              }}
                             >
                               <Link to="/Orders">
                                 <div className={"dropDownImage"}>
@@ -230,9 +266,14 @@ class TopBar extends Component {
                               </Link>
                             </li>
                             <li
-                              onClick={() =>
-                                this.setState({ ourDropdown: false })
-                              }
+                              onClick={() => {
+                                this.setState({ ourDropdown: false });
+                                setTimeout(() => {
+                                  this.setState({
+                                    isOpenDropdown: false,
+                                  });
+                                }, 220);
+                              }}
                             >
                               <Link to="/AccountSettings">
                                 <div className={"dropDownImage"}>
@@ -255,9 +296,14 @@ class TopBar extends Component {
                               </Link>
                             </li>
                             <li
-                              onClick={() =>
-                                this.setState({ ourDropdown: false })
-                              }
+                              onClick={() => {
+                                setTimeout(() => {
+                                  this.setState({
+                                    isOpenDropdown: false,
+                                  });
+                                }, 220);
+                                this.setState({ ourDropdown: false });
+                              }}
                             >
                               <Link to="/Addresses">
                                 <div className={"dropDownImage"}>
@@ -279,9 +325,14 @@ class TopBar extends Component {
                               </Link>
                             </li>
                             <li
-                              onClick={() =>
-                                this.setState({ ourDropdown: false })
-                              }
+                              onClick={() => {
+                                this.setState({ ourDropdown: false });
+                                setTimeout(() => {
+                                  this.setState({
+                                    isOpenDropdown: false,
+                                  });
+                                }, 220);
+                              }}
                             >
                               <Link to="/PaymentMethods">
                                 <div className={"dropDownImage"}>
@@ -304,9 +355,14 @@ class TopBar extends Component {
                               </Link>
                             </li>
                             <li
-                              onClick={() =>
-                                this.setState({ ourDropdown: false })
-                              }
+                              onClick={() => {
+                                setTimeout(() => {
+                                  this.setState({
+                                    isOpenDropdown: false,
+                                  });
+                                }, 220);
+                                this.setState({ ourDropdown: false });
+                              }}
                             >
                               <Link to="/Notifications">
                                 <div className={"dropDownImage"}>
@@ -329,9 +385,14 @@ class TopBar extends Component {
                               </Link>
                             </li>
                             <li
-                              onClick={() =>
-                                this.setState({ ourDropdown: false })
-                              }
+                              onClick={() => {
+                                this.setState({ ourDropdown: false });
+                                setTimeout(() => {
+                                  this.setState({
+                                    isOpenDropdown: false,
+                                  });
+                                }, 220);
+                              }}
                             >
                               <Link to="/Gifts">
                                 <div className={"dropDownImage"}>
@@ -354,9 +415,14 @@ class TopBar extends Component {
                             </li>
                             <li></li>
                             <li
-                              onClick={() =>
-                                this.setState({ ourDropdown: false })
-                              }
+                              onClick={() => {
+                                this.setState({ ourDropdown: false });
+                                setTimeout(() => {
+                                  this.setState({
+                                    isOpenDropdown: false,
+                                  });
+                                }, 220);
+                              }}
                             >
                               <Link>
                                 <div className={"dropDownImage"}>
@@ -368,9 +434,14 @@ class TopBar extends Component {
                               </Link>
                             </li>
                             <li
-                              onClick={() =>
-                                this.setState({ ourDropdown: false })
-                              }
+                              onClick={() => {
+                                setTimeout(() => {
+                                  this.setState({
+                                    isOpenDropdown: false,
+                                  });
+                                }, 220);
+                                this.setState({ ourDropdown: false });
+                              }}
                             >
                               <Link>
                                 <div className={"dropDownImage"}>
@@ -381,9 +452,14 @@ class TopBar extends Component {
                             </li>
                             <li></li>
                             <li
-                              onClick={() =>
-                                this.setState({ ourDropdown: false })
-                              }
+                              onClick={() => {
+                                this.setState({ ourDropdown: false });
+                                setTimeout(() => {
+                                  this.setState({
+                                    isOpenDropdown: false,
+                                  });
+                                }, 220);
+                              }}
                             >
                               <Link to="#" onClick={this.logout}>
                                 <div className={"dropDownImage"}>
@@ -401,7 +477,7 @@ class TopBar extends Component {
                 {getCookie("user") == null && (
                   <Fragment>
                     <div
-                      className={"topBar__links__dropdownContainer"}
+                      className={"topBar__links__dropdownContainer withBorder"}
                       onClick={this.loginClick}
                     >
                       <Button
@@ -419,7 +495,7 @@ class TopBar extends Component {
                   </Fragment>
                 )}
                 <div
-                  className={"topBar__links__dropdownContainer"}
+                  className={"topBar__links__dropdownContainer withBorder"}
                   onClick={() => {
                     this.setState({ cartOpened: true });
                     console.log(this.state.cartItems);

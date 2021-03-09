@@ -31,7 +31,7 @@
     transition: all 0.2s;
   }
 }
-.home {
+.foodCourts {
   &__popularSearchSection {
     display: flex;
     flex-direction: column;
@@ -208,10 +208,15 @@
       }
 
       &__itemImageBox {
+        border-radius: 12px;
+        overflow: hidden;
         &__image {
           width: 100%;
           padding: 0 0;
         }
+      }
+      a {
+        color: black;
       }
 
       &__titleBox {

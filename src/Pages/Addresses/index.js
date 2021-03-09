@@ -99,7 +99,7 @@ class Addresses extends Component {
                                   {item.tag}
                                 </span>
                               </div>
-                              <div className="col-6 text-left">
+                              <div className="col-5 text-left">
                                 <span className="Addresses__block__sectionParagraph">
                                   {item.address}
                                 </span>
@@ -124,8 +124,7 @@ class Addresses extends Component {
                     <Link to="/AddAddress">
                       <div className="Addresses__block__itemPlaceBox">
                         <span className="Addresses__block__itemPlaceBox__price">
-                          {" "}
-                          Add New Address{" "}
+                          Add New Address
                         </span>
                       </div>
                     </Link>

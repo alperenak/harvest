@@ -10,6 +10,7 @@ import karefoto from "../../assets/karefoto.jpg";
 import gutShots from "../../assets/gut_shots.jpg";
 import viewMore from "../../icons/view-more-icon.svg";
 import store from "../../store";
+import $ from "jquery";
 import styles from "./home.scss";
 import { getCookie } from "../../utils/cookie";
 
@@ -131,21 +132,22 @@ class Home extends Component {
       autoplayTimeout: 2500,
       rewind: true,
       autoplay: false,
+      nav: true,
       startPosition: 1,
       slideBy: 4,
       responsive: {
         0: {
-          items: 2,
+          items: 1,
         },
         768: {
-          items: 7,
+          items: 2,
         },
       },
     };
     const itemsOption = {
       items: 4,
-      nav: false,
       dots: false,
+      nav: true,
       autoplayTimeout: 2500,
       rewind: true,
       autoWidth: true,
@@ -179,7 +181,7 @@ class Home extends Component {
                       nisl tincidunt eget vulputate ut pharetra sit amet
                       aliquam.
                     </div>
-                    <div className="home__postsSection__discoverBtn">
+                    <div className="home__postsSection__discoverBtnPrimary">
                       <Button
                         type={"secondary"}
                         sizeName={"default"}
@@ -188,11 +190,13 @@ class Home extends Component {
                     </div>
                   </div>
                   <div className="col-lg-6 col-xs-12">
-                    <img
-                      src={karefoto}
-                      alt={karefoto}
-                      className={"sectionMainImg"}
-                    />
+                    <div className="homeImageWrapper">
+                      <img
+                        src={karefoto}
+                        alt={karefoto}
+                        className={"sectionMainImg"}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -200,15 +204,14 @@ class Home extends Component {
 
             <div className={"home__postsSection"}>
               <div className="container">
-                <div className="row">
-                  <div className="col-6 home__postsSection__sectionTitle text-left">
+                <div className="row d-flex align=items-center justify-content-center ">
+                  <div className="col-6 home__postsSection__sectionTitle text-left textCenter">
                     Browse our hottest categories
                   </div>
-                  <div className="col-6 home__postsSection__sectionTitle text-right"></div>
+                  <div className="col-6 home__postsSection__sectionTitle text-right responsiveRightSpaceSide"></div>
                 </div>
-                <div className="row">
+                <div className="row p-4">
                   <OwlCarousel ref="categories" options={catOptions}>
-                    <div style={{ width: 1 }} />
                     {this.state.mainCategories !== null &&
                       this.state.mainCategories.map((item, index) => (
                         <>
@@ -253,7 +256,7 @@ class Home extends Component {
             </div>
             <div className={"home__postsSection"}>
               <div className="container">
-                <div className="row">
+                <div className="row responsivePadding">
                   <div className="col-6 home__postsSection__sectionTitle text-left">
                     Recommended Items
                   </div>

@@ -71,10 +71,10 @@ class FoodCourts extends Component {
                           return (
                             <>
                               <div className="col-lg-4 col-md-6 col-xs-12">
-                                <div className="home__postsSection__categoryBoxes">
-                                  <div className="home__postsSection__categoryBoxes__basket">
+                                <div className="foodCourts__postsSection__categoryBoxes">
+                                  <div className="foodCourts__postsSection__categoryBoxes__basket">
                                     <Link to={`/FoodCourt/${item.id}`}>
-                                      <div className="home__postsSection__categoryBoxes__basket__addNew float-right">
+                                      <div className="foodCourts__postsSection__categoryBoxes__basket__addNew float-right">
                                         <img
                                           src={shoppingCartIcon}
                                           alt={shoppingCartIcon}
@@ -82,15 +82,15 @@ class FoodCourts extends Component {
                                       </div>
                                     </Link>
                                   </div>
-                                  <div className="home__postsSection__categoryBoxes__itemImageBox">
+                                  <div className="foodCourts__postsSection__categoryBoxes__itemImageBox">
                                     <img
                                       src={`http://34.224.26.130${item.item_image[0].path}`}
                                       alt={item.name}
-                                      className="home__postsSection__categoryBoxes__itemImageBox__image"
+                                      className="foodCourts__postsSection__categoryBoxes__itemImageBox__image"
                                     />
                                   </div>
-                                  <div className="home__postsSection__categoryBoxes__itemTitleBox">
-                                    <span className="home__postsSection__categoryBoxes__itemTitleBox__title">
+                                  <div className="foodCourts__postsSection__categoryBoxes__itemTitleBox">
+                                    <span className="foodCourts__postsSection__categoryBoxes__itemTitleBox__title">
                                       {" "}
                                       <Link to={`/FoodCourt/${item.id}`}>
                                         {item.name}

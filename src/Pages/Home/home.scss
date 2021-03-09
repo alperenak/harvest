@@ -10,6 +10,29 @@
     transition: all 0.2s;
   }
 }
+.responsivePadding {
+  @include medium {
+    padding: 0 20px;
+  }
+}
+.textCenter {
+  @include medium {
+    text-align: center !important;
+  }
+}
+.responsiveRightSpaceSide {
+  @include medium {
+    display: none;
+  }
+}
+.homeImageWrapper {
+  @include large {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+  }
+}
 .owl-stage-outer {
   overflow: visible;
 }
@@ -255,6 +278,9 @@
       background-color: #ffffff;
       border-radius: 12px;
       position: relative;
+      @include small {
+        width: 250px;
+      }
     }
 
     & .categoryBoxesHome {
@@ -483,11 +509,16 @@
     &__cards {
       margin-top: 30px;
     }
-    &__discoverBtn {
+    &__discoverBtnPrimary {
       margin-top: 30px;
       display: flex;
       align-items: left;
       justify-content: left;
+      @include large {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
 

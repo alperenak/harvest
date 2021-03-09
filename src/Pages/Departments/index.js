@@ -37,7 +37,7 @@ class Departments extends Component {
         getCookie("slug") ? getCookie("slug") : 1
       );
     } else {
-      var res = await store.getFoodItems();
+      // var res = await store.getFoodItems();
     }
     if (res) {
       if (this.state.selectedCategory === null) {
@@ -308,57 +308,57 @@ class Departments extends Component {
                         </div>
                       </div>
                     </div>
-                    <div className="row">
+                    <div className="row d-flex align-items-center justify-content-center">
                       {this.state.items !== null &&
                         this.state.items.map((item, index) => {
                           console.log(item);
                           return (
                             <>
-                              <div className="col-md-6 col-lg-4 col-xs-12">
-                                <div className="home__postsSection__categoryBoxes">
-                                  <div className="home__postsSection__categoryBoxes__basket">
-                                    <a
-                                      href="javascript:;"
+                              <div className="DepartmentsItemsBoxWrapper">
+                                <div className="DepartmentsItemsBox">
+                                  <div className="DepartmentsItemsBoxBasket">
+                                    <div
+                                      className="DepartmentsItemsBoxBasketTrash"
                                       onClick={(e) => {
                                         this.removeItem(item);
                                       }}
                                     >
-                                      <div className="home__postsSection__categoryBoxes__basket__trash">
-                                        <img src={trash} alt={trash} />
-                                      </div>
-                                    </a>
-                                    <div className="home__postsSection__categoryBoxes__basket__count">
+                                      <img src={trash} alt={trash} />
+                                    </div>
+                                    <div className="DepartmentsItemsBoxBasketCount">
                                       {this.getItemCount(item)}
                                     </div>
-                                    <a href="javascript:;">
-                                      <div
-                                        className="home__postsSection__categoryBoxes__basket__addNew"
-                                        onClick={(e) => {
-                                          this.setItem(item);
-                                        }}
-                                      >
-                                        +
-                                      </div>
-                                    </a>
+                                    <div
+                                      className="DepartmentsItemsBoxBasketAddNew"
+                                      onClick={(e) => {
+                                        this.setItem(item);
+                                      }}
+                                    >
+                                      +
+                                    </div>
                                   </div>
-                                  <div className="home__postsSection__categoryBoxes__itemImageBox">
-                                    <img
-                                      src={`http://3.80.123.181${item.item_image[0].path}`}
-                                      alt={elma}
-                                      className="home__postsSection__categoryBoxes__itemImageBox__image"
+                                  <div className="DepartmentsItemsBoxBasketAddNewImageBox">
+                                    <div
+                                      style={{
+                                        backgroundImage: `url(${`http://3.80.123.181${item.item_image[0].path}`})`,
+                                        backgroundSize: "cover",
+                                        backgroundPosition: "center",
+                                      }}
+                                      // src={`http://3.80.123.181${item.item_image[0].path}`}
+                                      className="DepartmentsItemsBoxBasketAddNewImageBoxImage"
                                     />
                                   </div>
-                                  <div className="home__postsSection__categoryBoxes__itemTitleBox">
+                                  <div className="DepartmentsItemsBoxBasketTitleBox">
                                     <span className="home__postsSection__categoryBoxes__itemTitleBox__title">
+                                      {" "}
                                       <Link to={`/ProductDetail/${item.id}`}>
                                         {item.name}
                                       </Link>{" "}
                                     </span>
                                   </div>
-                                  <div className="home__postsSection__categoryBoxes__itemPriceBox">
-                                    <span className="home__postsSection__categoryBoxes__itemPriceBox__price">
-                                      $ {item.price}
-                                    </span>
+                                  <div className="DepartmentsItemsBoxBasketAddNewPriceBox">
+                                    {" "}
+                                    $ {item.price}{" "}
                                   </div>
                                 </div>
                               </div>

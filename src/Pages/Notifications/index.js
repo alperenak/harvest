@@ -64,7 +64,7 @@ class Notifications extends Component {
                       </div>
                     </div>
                     <div className="col-3"></div>
-                    <div className="col-9">
+                    <div className="col-8">
                       <div className="Notifications__block__addressInput">
                         {" "}
                         <MaskedInput
@@ -90,7 +90,7 @@ class Notifications extends Component {
                         />{" "}
                       </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-4">
                       <a href="javascript:;">
                         <div className="Notifications__block__standartButton ">
                           <span className="Notifications__block__standartButton__text">

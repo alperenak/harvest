@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import CookieConsent from 'react-cookie-consent-notification';
+import CookieConsent from "react-cookie-consent-notification";
 import { useParams } from "react-router-dom";
 
 /*** Components ***/
@@ -35,58 +35,81 @@ import Modal from "./Components/Modal";
 /*** Styles ***/
 import styles from "./app.scss";
 
-
 class App extends React.Component {
   state = {
     isAuthorized: false,
     user: {},
-    mainCategories:[],
-    items:[],
-    recommended:[],
+    mainCategories: [],
+    items: [],
+    recommended: [],
     userType: "",
     loading: true,
     consentTaken: false,
     modal: {
       header: "",
       declaration: "",
-      size: 'small',
-      backgroundColor: '#fff',
+      size: "small",
+      backgroundColor: "#fff",
       content: {},
       buttons: [],
       visibility: false,
       isInternshipBegun: false,
       /*default: null*/
-      selectedJobID: '',
-    }
-
+      selectedJobID: "",
+    },
   };
   async componentDidMount() {
-    this.setState({ loading:false });
-    var marketType = localStorage.getItem("marketType")
-    if(!marketType){
-      localStorage.setItem("marketType", "harvest-market")
+    this.setState({ loading: false });
+
+    var marketType = localStorage.getItem("marketType");
+    if (!marketType) {
+      localStorage.setItem("marketType", "harvest-market");
     }
   }
 
-  createModal = ({ header, declaration, backgroundColor = '#fff', content, buttons, size = 'small' }) => {
+  createModal = ({
+    header,
+    declaration,
+    backgroundColor = "#fff",
+    content,
+    buttons,
+    size = "small",
+  }) => {
     this.setState({
-      modal: { header, declaration, backgroundColor, content, buttons, size, visibility: true },
+      modal: {
+        header,
+        declaration,
+        backgroundColor,
+        content,
+        buttons,
+        size,
+        visibility: true,
+      },
     });
   };
 
   closeModal = () => {
     this.setState({
-      modal: { header: "", declaration: "", backgroundColor: '#fff', size: 'small', visibility: false },
+      modal: {
+        header: "",
+        declaration: "",
+        backgroundColor: "#fff",
+        size: "small",
+        visibility: false,
+      },
     });
   };
 
   getUser = async () => {
     if (getCookie("token")) {
-      let res = await store.getUser(getCookie("user_id"), getCookie("auth_token"));
+      let res = await store.getUser(
+        getCookie("user_id"),
+        getCookie("auth_token")
+      );
       if (res.status && res.status === 200) {
         this.setState({
           user: res.data,
-          isAuthorized: true
+          isAuthorized: true,
         });
         return res;
       }
@@ -98,49 +121,54 @@ class App extends React.Component {
 
   checkStatus = (status) => {
     if (status) {
-      this.setState({ consentTaken: true })
+      this.setState({ consentTaken: true });
     }
-  }
+  };
 
   render() {
-    let { loading, user, modal, recommended, items, mainCategories } = this.state;
-    const cookieClass = this.state.consentTaken ? `${"hidden"} ${"myCookie"}` : "myCookie"
-    const appClass = this.state.consentTaken ? `${"App"} ${"fullScreen"} ` : `${"App"} ${"fullScreen"}`
+    let {
+      loading,
+      user,
+      modal,
+      recommended,
+      items,
+      mainCategories,
+    } = this.state;
+    const cookieClass = this.state.consentTaken
+      ? `${"hidden"} ${"myCookie"}`
+      : "myCookie";
+    const appClass = this.state.consentTaken
+      ? `${"App"} ${"fullScreen"} `
+      : `${"App"} ${"fullScreen"}`;
 
     return (
       <div className={appClass}>
-        {loading == true &&
-          <LoadingModal text="Loading" />
-        }
+        {loading == true && <LoadingModal text="Loading" />}
         <Router>
           <Route
             path="/"
             render={(props) => (
               <div>
-                <TopBar
-                  {...props}
-                />
-                <SubBar
-                  {...props}
-                />
+                <TopBar {...props} />
+                <SubBar {...props} />
               </div>
             )}
           />
-          {
-            modal.visibility &&
-					<Modal
-						header={modal.header}
-						modalSize={modal.size}
-						backgroundColor={modal.backgroundColor}
-						declaration={modal.declaration}
-						closeModal={this.closeModal}
-						content={modal.content}
-						buttons={modal.buttons}
-					/>
-          }
+          {modal.visibility && (
+            <Modal
+              header={modal.header}
+              modalSize={modal.size}
+              backgroundColor={modal.backgroundColor}
+              declaration={modal.declaration}
+              closeModal={this.closeModal}
+              content={modal.content}
+              buttons={modal.buttons}
+            />
+          )}
           <Switch>
             <Route
-              exact path="/"
+              exact
+              path="/"
               render={(props) => (
                 <Home
                   items={items}
@@ -148,43 +176,26 @@ class App extends React.Component {
                   recommended={recommended}
                   {...props}
                 />
-              )}  
+              )}
             />
-            <Route
-              path="/Register">
+            <Route path="/Register">
               <Home />
             </Route>
             <Route
               path="/Departments/:id"
-              render={(props) => (
-                <Departments
-                  {...props}
-                />
-              )}
+              render={(props) => <Departments {...props} />}
             />
             <Route
               path="/Departments/"
-              render={(props) => (
-                <Departments
-                  {...props}
-                />
-              )}
+              render={(props) => <Departments {...props} />}
             />
             <Route
               path="/FoodCourts/"
-              render={(props) => (
-                <FoodCourts
-                  {...props}
-                />
-              )}
+              render={(props) => <FoodCourts {...props} />}
             />
             <Route
               path="/ProductDetail/:id"
-              render={(props) => (
-                <ProductDetail
-                  {...props}
-                />
-              )}
+              render={(props) => <ProductDetail {...props} />}
             />
             <Route
               path="/Checkout"
@@ -218,19 +229,11 @@ class App extends React.Component {
             />
             <Route
               path="/Search/:query"
-              render={(props) => (
-                <Departments
-                  {...props}
-                />
-              )}
+              render={(props) => <Departments {...props} />}
             />
             <Route
               path="/Search/"
-              render={(props) => (
-                <Departments
-                  {...props}
-                />
-              )}
+              render={(props) => <Departments {...props} />}
             />
             <Route
               path="/AccountSettings"
@@ -321,7 +324,7 @@ class App extends React.Component {
                   createModal={this.createModal}
                   {...props}
                 />
-              )}  
+              )}
             />
             <Route
               path="/Gifts"
@@ -333,40 +336,42 @@ class App extends React.Component {
                 />
               )}
             />
-					<Route
-						path="/Login"
-						render={(props) => (
-							<Login
-								closeModal={this.closeModal}
-								createModal={this.createModal}
-								{...props}
-							/>
-						)}
-					/>
-					<Route
-						path="/SignUp"
-						render={(props) => (
-							<SignUp
-								closeModal={this.closeModal}
-								createModal={this.createModal}
-								{...props}
-							/>
-						)}
-					/>
+            <Route
+              path="/Login"
+              render={(props) => (
+                <Login
+                  closeModal={this.closeModal}
+                  createModal={this.createModal}
+                  {...props}
+                />
+              )}
+            />
+            <Route
+              path="/SignUp"
+              render={(props) => (
+                <SignUp
+                  closeModal={this.closeModal}
+                  createModal={this.createModal}
+                  {...props}
+                />
+              )}
+            />
           </Switch>
         </Router>
         <CookieConsent
           consentFunction={this.checkStatus}
           className={cookieClass}
-          buttonText={'Allow'}
-          buttonBackground={'#EFF2FC'}
-          buttonColor={'#112B49'}
+          buttonText={"Allow"}
+          buttonBackground={"#EFF2FC"}
+          buttonColor={"#112B49"}
         >
-          This website uses cookies to improve
-          service, for analytical and advertising purposes.
-        Please read our <a href={'/cookies'} style={{ color: '#EFF2FC' }}>Cookie Policy</a>.
-        Confirm your consent to the use of cookies.
-      </CookieConsent>
+          This website uses cookies to improve service, for analytical and
+          advertising purposes. Please read our{" "}
+          <a href={"/cookies"} style={{ color: "#EFF2FC" }}>
+            Cookie Policy
+          </a>
+          . Confirm your consent to the use of cookies.
+        </CookieConsent>
       </div>
     );
   }

@@ -1,42 +1,36 @@
-@import './helpers/responsiveBreakpointsMixins.scss';
-
+@import "./helpers/responsiveBreakpointsMixins.scss";
 
 * {
   box-sizing: border-box;
 }
 
 .App {
-
-
   // width: calc(100% - 208px);
   // height: calc(100% - 144px);
   // padding: 112px 64px 32px 144px;
   // position: relative;
 
-
   &.fullScreen {
     width: unset;
-
 
     // @include small {
     //   padding: 112px 5% 32px 5%;
     // }
-    &.paddingTop{
+    &.paddingTop {
       padding-top: 82px;
     }
   }
 
   & .hidden {
     bottom: -100px !important;
-    opacity: 0!important;
+    opacity: 0 !important;
   }
 
   & .myCookie {
-
     & * {
       box-sizing: content-box;
     }
-    transition: .8s cubic-bezier(0.48, -0.62, 0.51, 1.68);
+    transition: 0.8s cubic-bezier(0.48, -0.62, 0.51, 1.68);
     opacity: 1;
     max-width: 50rem;
     margin-left: auto;
@@ -57,9 +51,7 @@
     z-index: 900;
     text-align: center;
     opacity: 0.8;
-
   }
-
 
   & .temp {
     display: flex;
@@ -83,4 +75,44 @@
 .bold {
   font-weight: bold;
   font-family: "Sofia Pro Bold";
+}
+
+//Burasi varya burasi Allahin bir lutfudur
+.owl-prev {
+  position: absolute;
+  top: calc(50% - 30px);
+  background: white !important;
+  /* color: black !important; */
+  background-image: url("./icons/chevron-left.svg") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  content: "" !important;
+  width: 32px;
+  height: 32px;
+  font-size: 0px !important;
+  box-shadow: 0 7px 10px 4px rgba(63, 49, 178, 0.1) !important;
+  border-radius: 50% !important;
+  left: -5px;
+}
+.owl-next {
+  position: absolute;
+  top: calc(50% - 30px);
+  background: white !important;
+  /* color: black !important; */
+  background-image: url("./icons/chevron-right.svg") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  content: "" !important;
+  width: 32px;
+  height: 32px;
+  font-size: 0px !important;
+  box-shadow: 0 7px 10px 4px rgba(63, 49, 178, 0.1) !important;
+  border-radius: 50% !important;
+  right: -20px;
+}
+.owl-next:hover {
+  background: rgb(247, 247, 247) !important;
+  background-image: url("./icons/chevron-right.svg") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
 }

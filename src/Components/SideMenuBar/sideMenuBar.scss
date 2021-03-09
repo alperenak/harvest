@@ -50,6 +50,9 @@
   margin: 0;
   width: 340px;
   border-radius: 12px;
+  @include medium {
+    width: 100%;
+  }
 
   & .sideBarMenuTitleWrapper,
   a {

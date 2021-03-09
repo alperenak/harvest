@@ -1,4 +1,123 @@
 @import "../../helpers/responsiveBreakpointsMixins.scss";
+.width250 {
+  width: 250px;
+}
+.DepartmentsItemsBoxWrapper {
+  padding: 0 15px;
+  & .DepartmentsItemsBoxBasketTitleBox {
+    color: black;
+    font-size: 18px;
+    margin-top: 20px;
+    a {
+      color: black;
+      &:hover {
+        color: rgb(66, 66, 66);
+      }
+    }
+  }
+  & .DepartmentsItemsBox {
+    width: 250px;
+    padding: 20px;
+    height: 400px;
+    margin: 20px 0;
+    box-shadow: 0 3px 12px 0 #e9e6f4;
+    background-color: #ffffff;
+    border-radius: 12px;
+    position: relative;
+  }
+  & .DepartmentsItemsBoxBasketAddNewPriceBox {
+    position: absolute;
+    bottom: 20px;
+    font-family: "Sofia Pro Bold";
+    font-size: 20px;
+    left: 20px;
+  }
+
+  & .categoryBoxesHomeWrapper {
+    padding: 0 15px;
+  }
+  & .DepartmentsItemsBoxBasketAddNewImageBox {
+    height: 182px;
+    overflow: hidden;
+    & .DepartmentsItemsBoxBasketAddNewImageBoxImage {
+      height: 100%;
+    }
+  }
+  & .DepartmentsItemsBoxBasket {
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+
+    &__discount {
+      flex: 1;
+      padding: 10px 7px;
+      border-radius: 15px;
+      line-height: 1.14;
+      font-size: 14px;
+      text-align: center;
+      height: 38px;
+      margin-top: 9px;
+      margin-bottom: 9px;
+      margin-right: 33px;
+      justify-content: center;
+      color: #fff;
+      -webkit-backdrop-filter: blur(9px);
+      backdrop-filter: blur(9px);
+      box-shadow: 0 4px 12px 0 rgba(210, 203, 233, 0.47);
+      background-color: #f0592a;
+    }
+  }
+  & .DepartmentsItemsBoxBasketTrash {
+    flex: 1;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 48px;
+    -webkit-backdrop-filter: blur(9px);
+    backdrop-filter: blur(9px);
+    box-shadow: 0 4px 12px 0 rgba(210, 203, 233, 0.47);
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      background-color: rgb(247, 247, 247);
+    }
+    img {
+      width: 16px;
+    }
+  }
+  & .DepartmentsItemsBoxBasketCount {
+    flex: 1;
+    font-family: "Sofia Pro Bold";
+    font-size: 20px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  & .DepartmentsItemsBoxBasketAddNew {
+    flex: 1;
+    border-radius: 24px;
+    font-size: 32px;
+    color: #f0592a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    cursor: pointer;
+    height: 48px;
+    box-shadow: 0 4px 12px 0 rgba(210, 203, 233, 0.47);
+    background-color: #ffffff;
+    transition: all 0.3s;
+    &:hover {
+      background-color: rgb(247, 247, 247);
+    }
+  }
+}
+
 .boxAnimation {
   &:hover {
     -webkit-transform: translateY(-4px);
