@@ -77,7 +77,6 @@ class SubBar extends Component {
     }
   }
   async changeAddress(id, zipcode) {
-    alert(" sadsadsad");
     this.setState({
       selectedAddress: id,
     });

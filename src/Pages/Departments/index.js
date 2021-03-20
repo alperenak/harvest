@@ -123,7 +123,6 @@ class Departments extends Component {
       this.setState({
         mainCategories: res.data.mainCategories,
       });
-      alert("i am heres");
       let res2 = await store.getFoodItemsW(myObject, getCookie("slug"));
       if (res2) {
         this.setState({
