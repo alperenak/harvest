@@ -1,0 +1,223 @@
+@import "../../helpers/responsiveBreakpointsMixins.scss";
+
+.strong {
+  font-family: "Sofia Pro Bold";
+}
+.orderFromWrapper {
+  display: flex;
+  width: 190px;
+  justify-content: space-between;
+  cursor: pointer;
+  @include small {
+    width: 150px;
+  }
+}
+.hamburgerMenuContainer {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 8px 0 rgba(3, 0, 13, 0.07);
+  z-index: 9999999;
+  height: 0;
+  margin-top: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  position: relative;
+
+  & .hamburgerMenuCloseIcon {
+    cursor: pointer;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    height: 24px;
+    width: 24px;
+  }
+
+  & .hamburgerMenuTitleWrapper {
+    width: 85%;
+    display: flex;
+    height: 75%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    & .hamburgerMenuTitle {
+      color: black;
+      &:hover {
+        color: #f0592a;
+      }
+    }
+    & .hamburgerMenuTitleActive {
+      color: #f0592a;
+    }
+    & .hamburgerMenuTitle {
+      cursor: pointer;
+    }
+  }
+}
+.hamburgerMenuContainerActive {
+  height: calc(100vh - 160px);
+}
+.hamburgerMenuIcon {
+  display: none;
+  cursor: pointer;
+  @include x-large {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.subBar {
+  top: 0;
+  right: 0;
+  box-shadow: 0 2px 8px 0 rgba(3, 0, 13, 0.07);
+  z-index: 100;
+  background-color: #ffffff;
+  width: 100%;
+  position: relative;
+  margin-top: 90px;
+  display: block;
+  align-items: center;
+
+  &__container {
+    display: flex;
+    width: 100%;
+
+    @include x-large {
+      justify-content: space-around;
+    }
+    // @media screen and (max-width: 600px) {
+    //   &__icon {
+    //     display: none;
+    //   }
+    //   &__requestIcon {
+    //     display: none;
+    //   }
+    //   &__deliveryIcon {
+    //     display: none;
+    //   }
+    //   &__downIcon {
+    //     display: none;
+    //   }
+    //   &__orderFrom {
+    //     display: none;
+    //     &__top {
+    //       display: none;
+    //     }
+    //     &__bottom {
+    //       display: none;
+    //     }
+    //   }
+    // }
+    &__icon {
+      width: 36px;
+      height: 36px;
+      margin: 17px 0;
+    }
+    &__requestIcon {
+      width: 36px;
+      height: 36px;
+      margin: 17px 30px;
+      @include medium {
+        display: none;
+      }
+    }
+    &__deliveryIcon {
+      width: 36px;
+      height: 36px;
+      margin: 17px 0px 17px 40px;
+      @include small {
+        margin: 17px 0px 17px 10px;
+      }
+    }
+    &__downIcon {
+      width: 10px;
+      cursor: pointer;
+      @include small {
+        display: none;
+      }
+    }
+    &__orderFromOther {
+      margin: 17px 12px;
+      font-size: 12px;
+      @include small {
+        display: none;
+      }
+      &__top {
+        font-family: "Sofia Pro Bold";
+        display: block;
+      }
+      &__bottom {
+        font-family: "Sofia Pro Bold";
+        display: block;
+        color: #f0592a;
+      }
+    }
+    &__orderFrom {
+      margin: 17px 12px;
+      font-size: 12px;
+      &__top {
+        font-family: "Sofia Pro Bold";
+        display: block;
+      }
+      &__bottom {
+        font-family: "Sofia Pro Bold";
+        display: block;
+        color: #f0592a;
+      }
+    }
+
+    &__menu {
+      margin-left: 80px;
+      & ul {
+        list-style: none;
+        padding: 0px !important;
+        margin: 0px !important;
+        & li {
+          padding: 27px 0;
+          float: left;
+          font-family: "Sofia Pro Bold";
+          margin-right: 30px;
+          font-size: 14px;
+          & a {
+            color: #14181c;
+          }
+          &.active {
+            border-bottom: 1px solid #f0592a;
+            & a {
+              color: #f0592a !important;
+            }
+          }
+        }
+      }
+    }
+
+    @include x-large {
+      &__menu {
+        display: none;
+        & ul {
+          list-style: none;
+          padding: 0px !important;
+          margin: 0px !important;
+          & li {
+            padding: 7px 0;
+            float: left;
+            font-family: "Sofia Pro Bold";
+            margin-right: 10px;
+            font-size: 14px;
+            & a {
+              color: #14181c;
+            }
+            &.active {
+              border-bottom: 1px solid #f0592a;
+              & a {
+                color: #f0592a !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

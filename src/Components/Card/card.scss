@@ -1,0 +1,259 @@
+@import '../../helpers/responsiveBreakpointsMixins.scss';
+
+.Card {
+
+  &.wfaQuestion {
+	padding: 20px;
+	border: 1px solid #efefef;
+	border-radius: 12px;
+	margin-bottom: 30px;
+  }
+
+
+	&.pricing {
+		min-height: 500px;
+		padding: 20px;
+		border: 1px solid #efefef;
+		border-radius: 12px;
+		margin-bottom:30px;
+	}
+
+  &.internDetail {
+    display: flex;
+    padding: 20px;
+	border: 1px solid #efefef;
+    border-radius: 12px;
+	height:100%;
+  }
+
+  &.internInfo {
+    display: flex;
+    padding: 20px;
+	border: 1px solid #efefef;
+    border-radius: 12px;
+	height:100%;
+  }
+
+  &.photo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+    -o-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+	border: 1px solid #efefef;
+    border-radius: 12px;
+	padding: 16px 32px;
+	height: 100%;
+  }
+
+  &.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 24px 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+    -o-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+    @include large {
+      width: 50%;
+      height: 232px;
+      margin: 32px;
+    }
+    @include medium {
+      height: unset;
+    }
+  }
+
+  &.task {
+	width: 100%;
+    margin-bottom: 30px;
+    padding: 16px 0;
+    border-radius: 12px;
+    cursor: pointer;
+	    border: 1px solid #efefef;
+
+  }
+
+  &.myAccount {
+    width: 100%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+    -o-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+	border: 1px solid #efefef;
+    border-radius: 12px;
+	flex-direction: column;
+	height:100%;
+	padding-top: 30px;
+	padding-bottom: 30px;
+  }
+
+  &.table {
+		padding: 16px 32px;
+  		border: 1px solid #efefef;
+  		border-radius: 12px;
+		margin-bottom:0;
+		@include small{
+			margin-bottom:30px;
+		}
+
+    & .cardHeader {
+      margin: 0 0 20px;
+    }
+  }
+
+  &.numeric {
+	  padding: 16px 32px;
+  	border: 1px solid #efefef;
+  	border-radius: 12px;
+	@include small{
+		margin-bottom:30px;
+	}
+  }
+
+  &.num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	padding: 20px;
+	border: 1px solid #efefef;
+	border-radius: 12px;
+	margin-bottom: 30px;
+  }
+
+  &.chart {
+    width: 100%;
+	padding:16px;
+	border-radius: 12px;
+
+    @include small {
+      width: 100%;
+    }
+  }
+
+  &.modal_2{
+    border-radius: 4px;
+  }
+&.section{
+	position: relative;
+	padding: 16px 32px;
+	border: 1px solid #efefef;
+	border-radius: 12px;
+}
+&.coverLetter{
+	position: relative;
+	padding: 16px 32px;
+	border: 1px solid #efefef;
+	border-radius: 12px;
+}
+  &.jobPost {
+    width: 100%;
+    transition: .3s;
+	background-color: transparent!important;
+	margin-bottom:30px;
+  }
+
+  &.course {
+    width: 880px;
+  }
+
+  &.courseSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 440px;
+  }
+
+
+  &.profile {
+    padding: 56px 24px 48px;
+    min-width: 100%;
+	border: 1px solid #efefef;
+    border-radius: 12px;
+  }
+
+  &.dropDown {
+    margin: 0;
+    border-radius: 6px;
+    padding: 8px 16px;
+    width: 180px;
+    height: fit-content;
+  }
+
+  &.bellDropDown {
+    margin: 0;
+    border-radius: 6px;
+    padding: 8px 16px;
+    width: 240px;
+    height: fit-content;
+  }
+  &.internList {
+    transition: 0.3s;
+
+    @include x-large {
+      padding: 0;
+      margin: 0;
+      margin-top: 32px;
+    }
+
+    &:hover {
+      background-color: rgb(241, 241, 241);
+    }
+  }
+
+  & .responsiveDropdown {
+    margin: 0;
+    border-radius: 6px;
+    padding: 8px 16px;
+    min-width: 150px;
+    max-width: 200px;
+    height: fit-content;
+
+    @include small {
+      min-width: 136px;
+      margin-left: 7px;
+      width: 136px;
+      background-color: red;
+    }
+  }
+
+  &.list {
+    padding: 32px;
+    margin-right: 0;
+    margin-left: 0;
+	border: 1px solid #efefef;
+	border-radius: 12px;
+	    width: 100%;
+		margin-bottom:30px;
+  }
+
+  & .cardHeader {
+    margin-bottom: 32px;
+    font-family: "Sofia Pro Bold";
+    font-size: calc(2px + 24px);
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: -0.17px;
+    color: #2c3f58;
+
+    &.start {
+      text-align: start
+    }
+
+    &.end {
+      text-align: end
+    }
+
+    &.center {
+      text-align: center
+    }
+  }
+
+
+}

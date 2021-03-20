@@ -1,0 +1,25 @@
+.loadingContainer {
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  z-index: 999999999999999999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & .loading {
+    width: 95px;
+    height: 50px;
+    z-index: 999999;
+  }
+}
+
+.noBackground {
+  background: transparent;
+}
+.fullscreen {
+  left: 0;
+  top: 0;
+}

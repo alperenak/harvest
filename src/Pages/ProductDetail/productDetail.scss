@@ -1,0 +1,245 @@
+@import "../../helpers/responsiveBreakpointsMixins.scss";
+.ProductDetail {
+	&__breadcrumb {
+		margin-top: 20px;
+		&__items{
+			float:left;
+			display:flex;
+			&__item{
+				flex:1;
+				padding-left:20px;
+			}
+		}
+		&__share{
+			float:right;
+			font-family: "Sofia Pro";
+			font-size: 15px;
+			& span{
+				margin-left:10px;
+			}
+		}
+	}
+	&__postsSection {
+		display: flex;
+		flex-direction: column;
+		margin-top: 100px;
+		align-items: flex-start;
+		width: 100%;
+		&__imageBox{
+			float: left;
+			text-align: center;
+			& img{
+				width:300px;
+			}
+			&__imgSlides{
+				float: left;
+				margin-top:25px;
+				& img{
+					width:75px;
+					height:75px;
+					margin-right:15px;
+				}
+			}
+		}
+		& a{
+			width:100%;
+			text-align: center;
+		}
+		&__quantityBox{
+			display:flex;
+			&__option{
+				flex:1;
+				padding: 15px 0 0 0;
+				font-family: "Sofia Pro Bold";
+				font-size: 15px;
+				font-weight: bold;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 2.2;
+				letter-spacing: normal;
+				text-align: left;
+				color: #f0592a;
+				& select{
+					width:80px;
+					height:60px !important;
+					border-radius: 8px;
+					border: solid 1px #d5d4d9;
+					& option{
+						font-weight: bold;
+					}
+				}
+			}
+			&__cartButton{
+				padding: 15px 30px;
+				border-radius: 8px;
+				width:100%;
+				margin-top:15px;
+				margin-left:15px;
+				border: solid 1px #f0592a;
+				background-color: #f0592a;
+				&__icon{
+					font-family: "Sofia Pro Bold";
+					font-size: 14px;
+					line-height: 1.14;
+					letter-spacing: normal;
+					text-align: left;
+					padding:5px;
+					border-radius:50%;
+					background-color: #fff;
+				}
+				&__price{
+					font-family: "Sofia Pro Bold";
+					font-size: 14px;
+					margin-left:10px;
+					line-height: 2.14;
+					letter-spacing: normal;
+					text-align: left;
+					color: #fff;
+				}
+			}
+		}
+		&__itemPriceBox{
+			margin-top:20px;
+			text-align: left;
+			&__price{
+				display:flex;
+				&__text{
+					font-family: "Sofia Pro Bold";
+					font-size: 30px;
+					line-height: 1.71;
+					letter-spacing: normal;
+					text-align: left;
+					color: #f0592a;
+				}
+				&__discount{
+					padding: 7px 20px;
+					border-radius: 15px;  
+					font-size:14px;
+					margin-top:10px;
+					margin-left:20px;
+					height: 36px;
+					text-align: center;
+					color: #fff;
+					-webkit-backdrop-filter: blur(9px);
+					backdrop-filter: blur(9px);
+					box-shadow: 0 4px 12px 0 rgba(210, 203, 233, 0.47);
+					background-color: #f0592a;
+				}
+			}
+			&__oldPrice{
+				display:block;
+				font-family: "Sofia Pro";
+				font-size: 18px;
+				line-height: 1.19;
+				letter-spacing: normal;
+				text-decoration: line-through;
+				text-align: left;
+				color: #85848c;
+			}
+		}
+
+		&__itemBuyBox{
+			padding: 9px 0px;
+			border-radius: 8px;
+			width:100%;
+			margin-top:20px;
+			border: dashed 1px #f0592a;
+			&__icon{
+				font-family: "Sofia Pro Bold";
+				font-size: 14px;
+				line-height: 1.14;
+				letter-spacing: normal;
+				text-align: left;
+				color: #f0592a;
+			}
+			&__price{
+				font-family: "Sofia Pro Bold";
+				font-size: 14px;
+				margin-left:10px;
+				line-height: 1.14;
+				letter-spacing: normal;
+				text-align: left;
+				color: #f0592a;
+			}
+		}
+
+		&__sectionTitle {
+			font-family: "Sofia Pro Bold";
+			font-size: 24px;
+			font-weight: bold;
+			font-stretch: normal;
+			font-style: normal;  
+			line-height: 1.5;
+			letter-spacing: normal;
+			text-align: left;
+			color: #020100;
+			margin-bottom:0px;
+		}
+		&__sectionParagraph {
+			font-family: "Sofia Pro";
+			font-size: 16px;
+			margin-top:30px;
+			text-align: left;
+			color: #020100;
+		}
+		&__sectionMass {
+			font-family: "Sofia Pro Bold";
+			font-size: 14px;
+			font-stretch: normal;
+			font-style: normal;  
+			line-height: 1.5;
+			letter-spacing: normal;
+			text-align: left;
+			color: #020100;
+			margin-top: 15px;
+		}
+		&__sectionPrice {
+			font-family: "Sofia Pro Bold";
+			font-size: 14px;
+			font-stretch: normal;
+			font-style: normal;  
+			line-height: 1.5;
+			letter-spacing: normal;
+			text-align: left;
+			color: #020100;
+			margin-top: 15px;
+		}
+
+
+		&__sectionLink {
+			font-family: "Sofia Pro Bold";
+			font-size: 16px;
+			font-weight: bold;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 1.2;
+			letter-spacing: normal;
+			text-align: left;
+			color: #020100;
+			margin-bottom: 30px;
+			&__link{
+				color: #020100;
+				text-decoration: none;
+			}
+			& img{
+				margin-left:15px;
+			}
+		}
+	}
+}
+.dot {
+	font-size:15px;
+  }
+.oranged{
+    color: #f0592a !important;
+}
+.blacked{
+    color: #020100 !important;
+}
+.grayed{
+	margin-left:7px;
+    color: #85848c !important;
+}
+.right{
+	transform: rotate(90deg);
+}

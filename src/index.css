@@ -1,0 +1,83 @@
+@font-face {
+  font-family: "Sofia Pro";
+  src: url(./assets/fonts/SofiaProRegular.woff);
+}
+
+@font-face {
+  font-family: SofiaMedium;
+  src: url(./assets/fonts/SofiaPro-Medium.woff);
+}
+
+@font-face {
+  font-family: "Sofia Pro Bold";
+  src: url(./assets/fonts/SofiaPro-Bold.woff);
+}
+
+@font-face {
+  font-family: SofiaSemiBold;
+  src: url(./assets/fonts/SofiaPro-SemiBold.woff);
+}
+
+@font-face {
+  font-family: SofiaBlack;
+  src: url(./assets/fonts/SofiaPro-Black.woff);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Sofia Pro";
+}
+
+input,
+textarea {
+  font-family: "Sofia Pro";
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #000000;
+}
+::-webkit-scrollbar-track {
+  background: #f2f2f2;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #e6e6e6;
+}
+::-webkit-scrollbar-track:active {
+  background: #c2c2c2;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}

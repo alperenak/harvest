@@ -1,0 +1,47 @@
+{
+  "id": "5f5145c6cb4ec4130143bbd4",
+  "name": "Gustavo",
+  "surname": "Velasco",
+  "email": "gustavo.velasco@example.com",
+  "phone": "+90 543 739 05 54",
+  "location": {
+    "country": "Turkey",
+    "city": "Ankara"
+  },
+  "university": {
+    "university": "Ankara Üniversitesi",
+    "faculty": "Engineering",
+    "department": "Computer Science ",
+    "universityMail": "dummy@ogrenci.ankara.edu.tr",
+    "studentNumber": "18290111"
+  },
+  "gradStatus": "Student",
+  "avatar": "https://interny-pp.s3.eu-central-1.amazonaws.com/5f5145c6cb4ec4130143bbd4/pp.jpeg",
+  "Internship": {
+    "id": "5f640f3dc782454860f792f1",
+    "Employer": {
+      "id": "5f514d5f73b6d41b674e16fb",
+      "legalName": "Innovation and Partners Limited Inc.",
+      "accountName": "innovation",
+      "email": "info@innovationandpartners.com",
+      "password": "$2b$10$4KudtV/ob0WRodCLxo5lzuHXdH19zNqQlcGRlrHeeduBK71D6xw4C",
+      "logo": "https://interny-pp.s3.eu-central-1.amazonaws.com/5f514d5f73b6d41b674e16fb/pp.png",
+      "isValid": null,
+      "employeeNumber": 24,
+      "sectors": [],
+      "workingLocations": []
+    },
+    "position": "Game Developer",
+    "startDate": "9/30/2020",
+    "endDate": "11/30/2020",
+    "duration": "61",
+    "dayLeft": 13,
+    "internshipLength": "10 weeks",
+    "country": [
+      "Afghanistan",
+      "Åland Islands",
+      "Albania"
+    ],
+    "overAllScore": 4.8
+  }
+}

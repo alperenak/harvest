@@ -1,0 +1,841 @@
+@import "../../helpers/responsiveBreakpointsMixins.scss";
+
+.topBar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 1px 0 0 rgba(154, 154, 154, 0.17);
+  width: 100%;
+  height: 90px;
+  z-index: 8888888888888888;
+  display: flex;
+  align-items: center;
+  &__rightSide {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .row {
+    @include medium {
+      flex-wrap: nowrap;
+    }
+  }
+  .topBarMenuButton {
+    border-radius: 8px;
+    border: solid 1px #d5d4d9;
+    width: 190px;
+    height: 48px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 450px) {
+      width: 75px;
+    }
+
+    & .topBarMenuButtonLeftSide {
+      width: 24px;
+      height: 24px;
+      overflow: hidden;
+      border-radius: 50%;
+      left: 15px;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      & .topBarMenuButtonLeftSideIcon {
+        height: 100%;
+      }
+    }
+    & .topBarMenuButtonTitle {
+      left: 50px;
+      font-size: 14px;
+      font-weight: "Sofia Pro Bold";
+      color: #292929;
+      position: absolute;
+      @media screen and (max-width: 450px) {
+        display: none;
+      }
+    }
+    & .topBarMenuButtonRightSide {
+      position: absolute;
+      right: 15px;
+      & .topBarMenuButtonRightSideIcon {
+        width: 10px;
+        height: 6px;
+        margin-bottom: 4px;
+      }
+    }
+  }
+  .topBarDropdownImage {
+    width: 24px;
+    transition: all 0.2s;
+    height: 24px;
+    fill: black;
+  }
+  @media screen and (max-width: 600px) {
+    &__rightSide {
+      padding-top: 5px;
+    }
+  }
+  &__inputWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    @include large {
+      width: 200px;
+    }
+    @include medium {
+      display: none;
+    }
+  }
+
+  &__input {
+    padding: 16px 16px 16px 50px;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    height: 48px;
+    background-color: #faf9fe;
+  }
+  &__input:focus {
+    outline: -webkit-focus-ring-color auto 0px !important;
+  }
+  &__inputIcon {
+    position: absolute;
+    height: 16px;
+    left: 20px;
+    width: 16px;
+  }
+  &__tile {
+  }
+  &__scroll {
+    background-color: white;
+    -webkit-box-shadow: 0 3px 4px 0 rgba(215, 219, 252, 0.55);
+    -moz-box-shadow: 0 3px 4px 0 rgba(215, 219, 252, 0.55);
+    box-shadow: 0 3px 4px 0 rgba(215, 219, 252, 0.55);
+    transition: 0.5s;
+  }
+
+  &__fullScreen {
+    width: 100%;
+  }
+
+  &__logo {
+    cursor: pointer;
+    & img {
+      height: 50px;
+
+      @include small {
+        height: 32px;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    &__userName {
+      font-family: "Sofia Pro Bold";
+    }
+
+    @media screen and (min-width: 600px) {
+      &__dropdownContainer {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        &__dropdown {
+          position: absolute;
+          top: 58px;
+          right: 0;
+        }
+      }
+    }
+    .withBorder {
+      border: solid 1px #d5d4d9;
+      height: 48px;
+    }
+    @media screen and (max-width: 600px) {
+      &__dropdownContainer {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        border-radius: 8px;
+        align-items: center;
+        &__dropdown {
+          position: absolute;
+          top: 58px;
+          left: 0;
+        }
+      }
+    }
+
+    &__dropdownContainer2 {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      z-index: 999999999;
+      &__dropdown {
+        position: absolute;
+        top: 15px;
+        right: 0;
+      }
+    }
+
+    &__dropdownContainer3 {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      z-index: 999999999;
+      &__dropdown {
+        position: absolute;
+        top: 20px;
+        left: 0;
+      }
+    }
+
+    & .img {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 32px;
+      width: 32px;
+      border-radius: 50%;
+      margin: 0 4px;
+      background-color: #f0f0f0;
+
+      & .count {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        width: 10px;
+        font-size: 10px;
+        border-radius: 50%;
+        background-color: red;
+        color: white;
+        height: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3px;
+      }
+
+      & .cardContainer {
+        position: absolute;
+        display: flex;
+        justify-content: flex-end;
+        width: 100vw;
+        height: 100vw;
+        top: 42px;
+        right: 0;
+        cursor: default;
+      }
+
+      & > img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    & > div {
+      cursor: pointer;
+      margin: 0 20px;
+      font-family: "Sofia Pro Bold";
+      font-weight: 100;
+      font-size: 16px;
+      color: #264870;
+
+      &.packages:hover {
+        text-decoration: underline;
+      }
+
+      & > a {
+        font-family: "Sofia Pro Bold";
+        font-weight: 100;
+        font-size: calc(16px);
+        color: #264870;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &__nonscroll {
+      font-family: "Sofia Pro Bold";
+    }
+
+    &__scroll {
+      font-family: "Sofia Pro Bold";
+    }
+  }
+}
+.shoppingCart {
+  right: 0;
+  overflow-y: scroll;
+  padding-bottom: 20px;
+  top: 0;
+  position: absolute;
+  @media screen and (min-width: 600px) {
+    width: 660px;
+  }
+  background-color: #fff;
+  z-index: 999;
+  display: block;
+  height: 100vh;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 3px 12px 0 #e9e6f4;
+  &__cartHeader {
+    height: 96px;
+    display: flex;
+    border-bottom: solid 1px #ecebf3;
+    &__link {
+      flex: 1;
+      padding: 39px 7px 39px 30px;
+      font-family: "Sofia Pro Bold";
+      font-size: 15px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: normal;
+      text-align: left;
+      color: #f0592a;
+    }
+    &__text {
+      flex: 3;
+      padding: 30px 7px 39px 30px;
+      text-align: center;
+      font-size: 12px;
+      &__bold {
+        font-family: "Sofia Pro Bold";
+        font-size: 15px;
+      }
+    }
+    &__icon {
+      padding: 39px 30px 39px 30px;
+      text-align: right;
+      flex: 1;
+    }
+  }
+  &__cartContent {
+    background-color: #fff;
+    &__link {
+      flex: 1;
+      padding: 39px 7px 39px 30px;
+      font-family: "Sofia Pro Bold";
+      font-size: 15px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: normal;
+      text-align: left;
+      color: #f0592a;
+    }
+    &__text {
+      flex: 3;
+      padding: 30px 7px 39px 0px;
+      text-align: left;
+      font-size: 12px;
+      &__bold {
+        font-family: "Sofia Pro Bold";
+        font-size: 15px;
+      }
+    }
+    &__price {
+      flex: 1;
+      float: right;
+      padding: 36px 30px 30px 30px;
+      text-align: right;
+      font-size: 24px;
+      font-family: "Sofia Pro Bold";
+    }
+    &__icon {
+      padding: 20px 20px;
+      text-align: left;
+      &__image {
+        width: 60px;
+        height: 60px;
+      }
+    }
+    &__freeDelivery {
+      font-family: "Sofia Pro";
+      font-size: 15px;
+      line-height: 1.57;
+      letter-spacing: normal;
+      text-align: center;
+      color: #f0592a;
+      padding: 15px 0;
+      margin: 0 20px;
+      width: 100%;
+      letter-spacing: normal;
+      border-radius: 8px;
+      border: solid 1px #ebe8f3;
+      background-color: #ffffff;
+    }
+    & a {
+      width: 100%;
+      margin: 0 20px;
+      width: 100%;
+    }
+    &__checkout {
+      font-family: "Sofia Pro Bold";
+      font-size: 24px;
+      line-height: 1.57;
+      letter-spacing: normal;
+      padding: 21px 0;
+      text-align: center;
+      color: #fff;
+      letter-spacing: normal;
+      border-radius: 8px;
+      border: solid 1px #f0592a;
+      background-color: #f0592a;
+    }
+    &__item {
+      padding: 20px 20px 19px;
+      border-radius: 12px;
+      margin: 20px 20px;
+      width: 100%;
+      display: flex;
+      -webkit-backdrop-filter: blur(9px);
+      backdrop-filter: blur(9px);
+      box-shadow: 0 2px 6px 0 rgba(210, 203, 233, 0.46);
+      background-color: #ffffff;
+      &__icon {
+        padding: 10px 0px;
+        text-align: left;
+        &__image {
+          width: 48px;
+          height: 48px;
+        }
+      }
+      &__text {
+        flex: 2;
+        padding: 12px 20px;
+        text-align: left;
+        &__bold {
+          font-family: "Sofia Pro Bold";
+          font-size: 14px;
+        }
+      }
+      &__option {
+        flex: 1;
+        padding: 15px 0px 15px 30px;
+        font-family: "Sofia Pro Bold";
+        font-size: 15px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.2;
+        letter-spacing: normal;
+        text-align: left;
+        color: #f0592a;
+        & select {
+          width: 60px;
+          border-radius: 8px;
+          border: solid 1px #d5d4d9;
+        }
+      }
+      &__price {
+        flex: 1;
+        float: right;
+        padding: 12px 0px;
+        text-align: left;
+        font-size: 18px;
+        color: #f0592a;
+        font-family: "Sofia Pro Bold";
+      }
+      &__deleteIcon {
+        width: 48px;
+        height: 48px;
+        margin: 10px 0 30px 30px;
+        padding: 10px 10px 13.9px 16.4px;
+        border-radius: 24px;
+        -webkit-backdrop-filter: blur(9px);
+        backdrop-filter: blur(9px);
+        background-color: #d5d4d9;
+        & a {
+          margin: 0 0;
+        }
+        &__image {
+          width: 15.6px;
+          height: 21.1px;
+        }
+      }
+    }
+  }
+}
+.cartRow {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.dropDownHeader {
+  width: 100%;
+  font-size: calc(2px + 16px);
+  font-family: "Sofia Pro Bold";
+  list-style: none;
+  color: #2c3f58;
+  border-radius: 4px;
+  padding: 6px 8px;
+}
+
+.scale-out-center {
+  -webkit-animation: scale-out-center 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+  animation: scale-out-center 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2021-3-8 14:15:10
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation scale-in-center
+ * ----------------------------------------
+ */
+@-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes scale-out-center {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+}
+@keyframes scale-out-center {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+}
+
+.dropDownWrapperScaleOut {
+  animation: scale-out-center 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  position: relative;
+  margin: 0;
+  padding: 20px 10px;
+  width: 340px;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px 0 rgba(3, 0, 13, 0.15);
+  @media screen and (max-width: 600px) {
+    right: 140px;
+    width: 75vw;
+  }
+  @media screen and (max-width: 400px) {
+    right: 100px;
+    height: 75vh !important;
+    overflow-y: scroll;
+  }
+  background-color: #ffffff;
+  & li,
+  a {
+    display: flex;
+    font-family: "Sofia Pro";
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.19;
+    letter-spacing: normal;
+    text-align: left;
+    font-size: 14px;
+    list-style: none;
+    color: #484848;
+    border-radius: 12px;
+    padding: 6px 8px;
+    margin: 4px 0;
+    text-decoration: none;
+    transition: all 0.2s;
+    @include small {
+      font-size: 13px;
+    }
+
+    &:hover {
+      a,
+      li {
+        color: #f0592a;
+        font-weight: 100;
+      }
+
+      & .topBarDropdownImage {
+        fill: #f0592a;
+      }
+    }
+
+    &.selected {
+      background-color: rgba(#2c3f58, 0.08);
+      color: #2c3f58;
+
+      & .icon {
+        background-color: transparent;
+      }
+    }
+
+    & .messageContainer {
+      display: flex;
+      flex-direction: column;
+    }
+
+    & .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      padding: 5px;
+      background-color: rgba(#2c3f58, 0.08);
+
+      &.read {
+        height: 0.2px;
+        width: 0.2px;
+        background-color: #2c3f58;
+        margin-left: 20px;
+      }
+
+      & > img {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+}
+.dropDownWrapper {
+  position: relative;
+  animation: scale-in-center 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  margin: 0;
+  padding: 20px 10px;
+  width: 340px;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px 0 rgba(3, 0, 13, 0.15);
+  background-color: #ffffff;
+
+  & li,
+  a {
+    display: flex;
+    font-family: "Sofia Pro";
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.19;
+    letter-spacing: normal;
+    text-align: left;
+    font-size: 14px;
+    list-style: none;
+    color: #484848;
+    border-radius: 12px;
+    padding: 6px 8px;
+    margin: 4px 0;
+    text-decoration: none;
+    transition: all 0.2s;
+    @include small {
+      font-size: 13px;
+    }
+
+    &:hover {
+      a,
+      li {
+        color: #f0592a;
+        font-weight: 100;
+      }
+
+      & .topBarDropdownImage {
+        fill: #f0592a;
+      }
+    }
+
+    &.selected {
+      background-color: rgba(#2c3f58, 0.08);
+      color: #2c3f58;
+
+      & .icon {
+        background-color: transparent;
+      }
+    }
+
+    & .messageContainer {
+      display: flex;
+      flex-direction: column;
+    }
+
+    & .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      padding: 5px;
+      background-color: rgba(#2c3f58, 0.08);
+
+      &.read {
+        height: 0.2px;
+        width: 0.2px;
+        background-color: #2c3f58;
+        margin-left: 20px;
+      }
+
+      & > img {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .dropDownWrapper {
+    position: relative;
+    padding: 20px 10px;
+    animation: scale-in-center 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    right: 140px;
+    width: 75vw;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px 0 rgba(3, 0, 13, 0.15);
+    background-color: #ffffff;
+    @media screen and (max-width: 400px) {
+      right: 100px;
+      height: 75vh !important;
+      overflow-y: scroll;
+    }
+
+    & li,
+    a {
+      display: flex;
+      font-family: "Sofia Pro";
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.19;
+      letter-spacing: normal;
+      text-align: left;
+      font-size: 14px;
+      list-style: none;
+      color: #484848;
+      border-radius: 4px;
+      padding: 6px 8px;
+      margin: 4px 0;
+      text-decoration: none;
+      @include small {
+        font-size: 13px;
+      }
+
+      &:hover {
+        color: #2c3f58;
+        font-weight: 100;
+      }
+
+      &.selected {
+        background-color: rgba(#2c3f58, 0.08);
+        color: #2c3f58;
+
+        & .icon {
+          background-color: transparent;
+        }
+      }
+
+      & .messageContainer {
+        display: flex;
+        flex-direction: column;
+      }
+
+      & .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        padding: 5px;
+        background-color: rgba(#2c3f58, 0.08);
+
+        &.read {
+          height: 0.2px;
+          width: 0.2px;
+          background-color: #2c3f58;
+          margin-left: 20px;
+        }
+
+        & > img {
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+  }
+}
+
+.title {
+  font-family: "Sofia Pro Bold";
+  margin-left: 10px;
+}
+
+.active {
+  color: #f0592a;
+}
+.activeDropdownIcon {
+  width: 24px;
+  transition: all 0.2s;
+  height: 24px;
+  fill: #f0592a;
+}
+.linksSearch {
+  @include medium {
+    display: none !important;
+  }
+}

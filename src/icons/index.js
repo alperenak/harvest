@@ -1,0 +1,11 @@
+export { default as AccountIcon } from "./AccountIcon";
+export { default as AddressesIcon } from "./AddressesIcon";
+export { default as GiftCardsIcon } from "./GiftCardsIcon";
+export { default as HelpIcon } from "./HelpIcon";
+export { default as InviteFriendsIcon } from "./InviteFriendsIcon";
+export { default as LogoutIcons } from "./LogoutIcons";
+export { default as NotificationIcon } from "./NotificationIcon";
+export { default as OrdersIcon } from "./OrdersIcon";
+export { default as PopupClose } from "./PopupClose";
+export { default as ShoppingCartIcon } from "./ShoppingCartIcon";
+export { default as PaymentIcon } from "./PaymentIcon";
