@@ -105,7 +105,7 @@ class Departments extends Component {
         var myObject = {
           q,
           page: 1,
-          category: res.data.mainCategories[0].id,
+          // category: res.data.mainCategories[0].id,
         };
       } else {
         var q = "";
@@ -118,12 +118,12 @@ class Departments extends Component {
         var myObject = {
           q,
           page: 1,
-          category: this.state.selectedCategory,
         };
       }
       this.setState({
         mainCategories: res.data.mainCategories,
       });
+      alert("i am heres");
       let res2 = await store.getFoodItemsW(myObject, getCookie("slug"));
       if (res2) {
         this.setState({

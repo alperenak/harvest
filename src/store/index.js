@@ -128,6 +128,7 @@ let store = {
     );
   },
   async getFoodItemsW(payload, slug) {
+    console.log(payload);
     let baseUrl = config.baseUrl;
     let path = `/get-restaurant-items/` + slug;
     let tokenCookieName = "token";

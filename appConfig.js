@@ -1,5 +1,5 @@
 const config = {
-  baseUrl: 'http://34.224.26.130/public/api/',
+  baseUrl: "http://3.80.123.181/public/api/",
 };
 
 module.exports = config;
