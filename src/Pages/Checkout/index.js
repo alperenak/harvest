@@ -26,6 +26,7 @@ class Checkout extends Component {
     selectedBillingAddress: {},
     addressList: [],
     deliveryTimeModal: false,
+    deliveryChange: false,
     processing: true,
     deliveryTimeList: [
       "Within 1 Hour",
@@ -34,7 +35,7 @@ class Checkout extends Component {
       "1pm - 3pm",
       "3pm - 5pm",
       "5pm - 7pm",
-      "7pm - 8pm",
+      "7pm - 9pm",
     ],
     selectedDeliveryTime: "",
     selectedDeliveryIndex: -1,
@@ -643,7 +644,7 @@ class Checkout extends Component {
                           />
                         </div>
                         <div className="Checkout__block__deliveryItem__time">
-                          7pm - 8pm
+                          7pm - 9pm
                         </div>
                       </div>
                     </div>
@@ -699,7 +700,7 @@ class Checkout extends Component {
                     </div>
                   </div>
                   <div className={"Checkout__block"}>
-                    <div className="container">
+                    {/* <div className="container">
                       <div className="Checkout__block__sectionTitle">
                         Mobile Number
                       </div>
@@ -741,8 +742,8 @@ class Checkout extends Component {
                                                     <div className="Checkout__block__standartButton ">
                                                         <span className="Checkout__block__standartButton__text"> Save </span>
                                                     </div>
-                                                </a> */}
-                    </div>
+                                                </a> 
+                    </div> */}
                   </div>
                   <div className={"Checkout__block"}>
                     <div className="container">
@@ -1002,12 +1003,20 @@ class Checkout extends Component {
                           <span className="Checkout__block__leftPart">
                             Delivery Tip
                           </span>
-                          <Link to="#" className="Checkout__block__change">
+                          <Link
+                            to="#"
+                            className="Checkout__block__change"
+                            onClick={() =>
+                              this.setState({
+                                deliveryChange: !this.state.deliveryChange,
+                              })
+                            }
+                          >
                             Change
                           </Link>
                         </div>
-                        <div className="col-4 text-right">
-                          <span className="Checkout__block__rightPart">
+                        <div className="col-4 text-right Checkout__block__rightPart">
+                          <span>
                             ${" "}
                             {this.state.deliveryTip !== null &&
                               Number(this.state.deliveryTip).toFixed(2)}
@@ -1015,10 +1024,27 @@ class Checkout extends Component {
                         </div>
                       </div>
                       <div className="row mt30">
+                        {this.state.deliveryChange && (
+                          <div className="Checkout__block__addressInput pl-3 pr-3">
+                            <input
+                              type="text"
+                              className="Checkout__block__addressInput__input"
+                              rows="5"
+                              onChange={(event) => {
+                                this.setState({
+                                  deliveryTip: event.target.value,
+                                });
+                              }}
+                              value={this.state.deliveryTip}
+                              placeholder=""
+                            />{" "}
+                          </div>
+                        )}
+                      </div>
+                      <div className="row mt30">
                         <div className="col-12">
                           Want to recognize your delivery person's efforts?
-                          Consider a larger tip as a thank you 100% of the tip
-                          goes to them.
+                          Consider a larger tip to qualify their job
                         </div>
                       </div>
                       <div className="hrLine"></div>

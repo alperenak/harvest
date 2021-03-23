@@ -31,16 +31,12 @@ class SubBar extends Component {
     hamburgerMenuIsOpen: false,
     marketTypes: [
       {
-        value: "request-now",
-        name: "Request Now",
-      },
-      {
         value: "harvest-market",
         name: "Harvest Market",
       },
       {
         value: "harvest-trolley",
-        name: "Harvest Trolley",
+        name: "Harvestrolley",
       },
     ],
   };
@@ -129,12 +125,16 @@ class SubBar extends Component {
                       className="subBar__container__icon"
                     />
                     <div className="subBar__container__orderFrom">
-                      <div className="subBar__container__orderFrom__top">
+                      <div className="subBar__container__orderFrom__top orderFromTitle">
                         Order from
                         <br />
                       </div>
                       <Fragment>
-                        <div className={"topBar__links__dropdownContainer3"}>
+                        <div
+                          className={
+                            "topBar__links__dropdownContainer3 subBarOrderLinks"
+                          }
+                        >
                           <div
                             onClick={() =>
                               this.setState({
@@ -172,7 +172,7 @@ class SubBar extends Component {
                                 "topBar__links__dropdownContainer3__dropdown"
                               }
                             >
-                              <ul className={"dropDownWrapper"}>
+                              <ul className={"dropDownWrapper requestDropdown"}>
                                 {this.state.marketTypes.map((item, index) => (
                                   <>
                                     <li
@@ -201,6 +201,7 @@ class SubBar extends Component {
 
                     <img
                       src={downArrowIcon}
+                      className="orderFromDownIcon"
                       alt={downArrowIcon}
                       onClick={() =>
                         this.setState({
@@ -210,11 +211,17 @@ class SubBar extends Component {
                       className="subBar__container__downIcon"
                     />
                   </div>
-                  <img
-                    src={requestNowIcon}
-                    alt={requestNowIcon}
-                    className="subBar__container__requestIcon"
-                  />
+                  <div
+                    className="d-flex align-items-center-justify-content-center cursorPointer"
+                    onClick={() => (window.location.href = "/RequestNow")}
+                  >
+                    <img
+                      src={requestNowIcon}
+                      alt={requestNowIcon}
+                      className="subBar__container__requestIcon"
+                    />
+                    <div className="requestNowButton">Request Now</div>
+                  </div>
                   <div className="subBar__container__menu">
                     <ul>
                       <li className={`${pathname === "/" && "active"}`}>
@@ -244,9 +251,6 @@ class SubBar extends Component {
                         }`}
                       >
                         <Link to="/FoodCourts">Food Court</Link>
-                      </li>
-                      <li>
-                        <a href="#">Harvest Club</a>
                       </li>
                     </ul>
                   </div>
@@ -420,7 +424,6 @@ class SubBar extends Component {
                         Food Court
                       </div>
                     </Link>
-                    <div className="hamburgerMenuTitle">Harvest Club</div>
                     {/* <li className="active">
                   </li>
                   <li>

@@ -420,8 +420,7 @@ class FoodCourt extends Component {
                         <div className="row mt30">
                           <div className="col-12">
                             Want to recognize your delivery person's efforts?
-                            Consider a larger tip as a thank you 100% of the tip
-                            goes to them.
+                            Consider a larger tip to qualify their job
                           </div>
                         </div>
                         <div className="hrLine"></div>

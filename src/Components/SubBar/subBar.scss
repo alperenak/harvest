@@ -3,13 +3,48 @@
 .strong {
   font-family: "Sofia Pro Bold";
 }
+.subBarOrderLinks {
+  @include medium {
+  }
+}
+.orderFromTitle {
+  @include medium {
+    display: none;
+  }
+}
+.requestDropdown {
+  @include medium {
+    width: 200px;
+    margin-top: 20px;
+    margin-left: 70px;
+  }
+  @include small {
+    height: min-content !important;
+    overflow-y: hidden;
+  }
+}
+.cursorPointer {
+  cursor: pointer;
+}
+.requestNowButton {
+  color: #f0592a;
+  font-family: "Sofia Pro Bold";
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  @include small {
+    display: none;
+  }
+}
 .orderFromWrapper {
   display: flex;
   width: 190px;
   justify-content: space-between;
   cursor: pointer;
-  @include small {
-    width: 150px;
+
+  @include medium {
+    justify-content: center;
+    width: min-content;
   }
 }
 .hamburgerMenuContainer {
@@ -119,9 +154,7 @@
       width: 36px;
       height: 36px;
       margin: 17px 30px;
-      @include medium {
-        display: none;
-      }
+      margin-right: 10px;
     }
     &__deliveryIcon {
       width: 36px;
@@ -134,9 +167,6 @@
     &__downIcon {
       width: 10px;
       cursor: pointer;
-      @include small {
-        display: none;
-      }
     }
     &__orderFromOther {
       margin: 17px 12px;
@@ -147,6 +177,9 @@
       &__top {
         font-family: "Sofia Pro Bold";
         display: block;
+        @include medium {
+          display: none;
+        }
       }
       &__bottom {
         font-family: "Sofia Pro Bold";
@@ -159,12 +192,14 @@
       font-size: 12px;
       &__top {
         font-family: "Sofia Pro Bold";
-        display: block;
       }
       &__bottom {
         font-family: "Sofia Pro Bold";
         display: block;
         color: #f0592a;
+        @include medium {
+          display: none;
+        }
       }
     }
 

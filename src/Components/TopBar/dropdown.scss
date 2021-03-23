@@ -1,4 +1,4 @@
-@import '../../helpers/responsiveBreakpointsMixins.scss';
+@import "../../helpers/responsiveBreakpointsMixins.scss";
 
 .dropDownHeader {
   width: 100%;
@@ -9,7 +9,10 @@
   border-radius: 4px;
   padding: 6px 8px;
 }
-
+.subBarDropdown {
+  overflow-y: scroll;
+  max-height: 95vh;
+}
 .dropDownWrapper {
   position: relative;
   margin: 0;
@@ -28,10 +31,9 @@
     border-radius: 4px;
     padding: 6px 8px;
     margin: 2px 0;
-	text-decoration: none;
+    text-decoration: none;
     @include small {
       font-size: calc(2px + 11px);
-
     }
 
     &:hover {
@@ -58,7 +60,6 @@
       }
     }
 
-
     & .icon {
       display: flex;
       justify-content: center;
@@ -76,9 +77,9 @@
         margin-left: 20px;
       }
 
-      &>img {
+      & > img {
         width: 15px;
-		height:15px;
+        height: 15px;
       }
     }
   }

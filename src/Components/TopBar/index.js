@@ -10,7 +10,7 @@ import styles from "./topBar.scss";
 /*** Icons ***/
 import logo from "../../assets/logo.png";
 import ordersIcon from "../../icons/orders-icon.svg";
-import Profile from "../../assets/pp.jpg";
+import Profile from "../../assets/pp.png";
 import closeIcoon from "../../icons/popup-close.svg";
 import shoppingCartIcon from "../../icons/shopping-cart-icon.svg";
 import harvestTrolleyIcon from "../../icons/HarvestTrolley-icon.svg";
@@ -223,7 +223,7 @@ class TopBar extends Component {
                           }
                         >
                           <ul
-                            className={` ${
+                            className={`subBarDropdown ${
                               !this.state.ourDropdown
                                 ? "dropDownWrapperScaleOut"
                                 : "dropDownWrapper"

@@ -171,22 +171,22 @@ class Home extends Component {
                 <div className="row">
                   <div className="col-lg-6 col-xs-12">
                     <div className="home__postsSection__postsTitle">
-                      Pharetra et neque
+                      All the essentials,
                       <br />
-                      ornare aenean
+                      one step away from your door
                     </div>
                     <div className="home__postsSection__postsSubTitle">
-                      Laoreet suspendisse interdum consectetur faucibus
-                      <br />
-                      nisl tincidunt eget vulputate ut pharetra sit amet
-                      aliquam.
+                      Order online or make an appointment for a private, secure,
+                      front door shopping experience
                     </div>
                     <div className="home__postsSection__discoverBtnPrimary">
-                      <Button
-                        type={"secondary"}
-                        sizeName={"default"}
-                        text={"Primary Button"}
-                      />
+                      <Link to="/Departments">
+                        <Button
+                          type={"secondary"}
+                          sizeName={"default"}
+                          text={"Shop Now"}
+                        />
+                      </Link>
                     </div>
                   </div>
                   <div className="col-lg-6 col-xs-12">

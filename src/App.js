@@ -34,6 +34,7 @@ import Modal from "./Components/Modal";
 
 /*** Styles ***/
 import styles from "./app.scss";
+import PrivacyPolicy from "./Pages/PrivacyPolicy/privayPolicy";
 
 class App extends React.Component {
   state = {
@@ -350,6 +351,16 @@ class App extends React.Component {
               path="/SignUp"
               render={(props) => (
                 <SignUp
+                  closeModal={this.closeModal}
+                  createModal={this.createModal}
+                  {...props}
+                />
+              )}
+            />{" "}
+            <Route
+              path="/Privacy"
+              render={(props) => (
+                <PrivacyPolicy
                   closeModal={this.closeModal}
                   createModal={this.createModal}
                   {...props}

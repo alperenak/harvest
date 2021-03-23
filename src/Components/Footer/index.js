@@ -38,8 +38,8 @@ class Footer extends Component {
                         <h2
                           className={"footerSection__options__sectionMidTitle"}
                         >
-                          Can't find answer? Don’t worry, our support team will
-                          help you :)
+                          Can't find what you are looking for? Don’t worry, our
+                          support team will help you :)
                         </h2>
                       </div>
                     </div>
@@ -81,7 +81,11 @@ class Footer extends Component {
                 <div className={"footerSection__options"}>
                   <div className="row">
                     <div className="col-md-3 col-xs-12 mt-3 mb-3">
-                      <div className={"footerSection__options__sectionDiv"}>
+                      <div
+                        className={
+                          "footerSection__options__sectionDiv  d-flex align-items-center justify-content-center"
+                        }
+                      >
                         <img
                           src={insurance}
                           alt={insurance}
@@ -93,7 +97,11 @@ class Footer extends Component {
                       </div>
                     </div>
                     <div className="col-md-3 col-xs-12 mt-3 mb-3">
-                      <div className={"footerSection__options__sectionDiv"}>
+                      <div
+                        className={
+                          "footerSection__options__sectionDiv  d-flex align-items-center justify-content-center"
+                        }
+                      >
                         <img
                           src={returnBox}
                           alt={returnBox}
@@ -105,7 +113,11 @@ class Footer extends Component {
                       </div>
                     </div>
                     <div className="col-md-3 col-xs-12 mt-3 mb-3">
-                      <div className={"footerSection__options__sectionDiv"}>
+                      <div
+                        className={
+                          "footerSection__options__sectionDiv d-flex align-items-center justify-content-center"
+                        }
+                      >
                         <img
                           src={shoppingStore}
                           alt={shoppingStore}
@@ -117,7 +129,11 @@ class Footer extends Component {
                       </div>
                     </div>
                     <div className="col-md-3 col-xs-12 mt-3 mb-3">
-                      <div className={"footerSection__options__sectionDiv"}>
+                      <div
+                        className={
+                          "footerSection__options__sectionDiv d-flex align-items-center justify-content-center"
+                        }
+                      >
                         <img
                           src={bestSeller}
                           alt={bestSeller}
@@ -135,7 +151,7 @@ class Footer extends Component {
             <div className="row footerRow">
               <div className="col-xl-12 col-lg-12 col-12">
                 <div className={"footerSection__options"}>
-                  <div className="row">
+                  <div className="row  d-flex justify-content-center">
                     <div className="col-md-3">
                       <div className={styles.knowUs}>
                         <h2 className={"footerSection__options__optionTitle"}>
@@ -143,21 +159,21 @@ class Footer extends Component {
                         </h2>
                         <ul>
                           <li>
-                            <Link to="#">Organic</Link>
+                            <Link to="/Departments">Bakery & Bread</Link>
                           </li>
                           <li>
-                            <Link to="#">Grocery</Link>
+                            <Link to="/Departments">Grocery</Link>
                           </li>
                           <li>
-                            <Link to="#">Kitchen</Link>
+                            <Link to="/Departments">Produce</Link>
                           </li>
                           <li>
-                            <Link to="#">Furniture</Link>
+                            <Link to="/Departments">Meat & Seafood</Link>
                           </li>
                         </ul>
                       </div>
                     </div>
-                    <div className="col-md-3">
+                    {/* <div className="col-md-3">
                       <div className={styles.knowUs}>
                         <h2 className={"footerSection__options__optionTitle"}>
                           Our Company
@@ -171,8 +187,8 @@ class Footer extends Component {
                           </li>
                         </ul>
                       </div>
-                    </div>
-                    <div className="col-md-3">
+                    </div> */}
+                    {/* <div className="col-md-3">
                       <div className={styles.knowUs}>
                         <h2 className={"footerSection__options__optionTitle"}>
                           Latest News
@@ -192,7 +208,7 @@ class Footer extends Component {
                           </li>
                         </ul>
                       </div>
-                    </div>
+                    </div> */}
                     <div className="col-md-3">
                       <div className={styles.knowUs}>
                         <h2 className={"footerSection__options__optionTitle"}>
@@ -200,16 +216,7 @@ class Footer extends Component {
                         </h2>
                         <ul>
                           <li>
-                            <Link to="#">Conditions</Link>
-                          </li>
-                          <li>
-                            <Link to="#">Privacy</Link>
-                          </li>
-                          <li>
-                            <Link to="#">Blog</Link>
-                          </li>
-                          <li>
-                            <Link to="#">FAQs</Link>
+                            <Link to="/privacy">Privacy</Link>
                           </li>
                         </ul>
                       </div>
