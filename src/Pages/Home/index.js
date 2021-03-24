@@ -226,7 +226,7 @@ class Home extends Component {
                                 <div className="categoryBoxesHomeImageWrapper">
                                   <img
                                     alt=""
-                                    src={`http://34.224.26.130${item.image}`}
+                                    src={`http://3.80.123.181${item.image}`}
                                     className="home__postsSection__categoryBoxes__imageBox__image"
                                   />
                                 </div>

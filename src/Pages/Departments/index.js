@@ -105,7 +105,7 @@ class Departments extends Component {
         var myObject = {
           q,
           page: 1,
-          // category: res.data.mainCategories[0].id,
+          category: res.data.mainCategories[0].id,
         };
       } else {
         var q = "";
@@ -339,7 +339,7 @@ class Departments extends Component {
                                   <div className="DepartmentsItemsBoxBasketAddNewImageBox">
                                     <div
                                       style={{
-                                        backgroundImage: `url(${`http://3.80.123.181${item.item_image[0].path}`})`,
+                                        backgroundImage: `url(${`http://3.80.123.181/${item.item_image[0].path}`})`,
                                         backgroundSize: "cover",
                                         backgroundPosition: "center",
                                       }}

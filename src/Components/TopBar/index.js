@@ -570,7 +570,7 @@ class TopBar extends Component {
                           >
                             {item.image !== null && (
                               <img
-                                src={`http://3.80.123.181${item.image}`}
+                                src={`https://34.224.26.130${item.image}`}
                                 alt={item.name}
                                 className={
                                   "shoppingCart__cartContent__item__icon__image"

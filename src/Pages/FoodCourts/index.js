@@ -84,7 +84,7 @@ class FoodCourts extends Component {
                                   </div>
                                   <div className="foodCourts__postsSection__categoryBoxes__itemImageBox">
                                     <img
-                                      src={`http://34.224.26.130${item.item_image[0].path}`}
+                                      src={`http://3.80.123.181${item.item_image[0].path}`}
                                       alt={item.name}
                                       className="foodCourts__postsSection__categoryBoxes__itemImageBox__image"
                                     />
