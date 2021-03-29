@@ -1,4 +1,7 @@
 @import "../../helpers/responsiveBreakpointsMixins.scss";
+.cursorPointer {
+  cursor: pointer;
+}
 .FoodCourt {
   &__block {
     display: flex;

@@ -426,20 +426,16 @@ class RequestNow extends Component {
                           <p>
                             By placing your order, you agree to be bound by the
                             HarvestTrolley{" "}
-                            <span className="oranged">Terms of Service</span>{" "}
+                            <span
+                              className="oranged cursorPointer"
+                              onClick={() =>
+                                (window.location.href = "/Privacy")
+                              }
+                            >
+                              Terms of Service
+                            </span>{" "}
                             and Privacy Policy.
                           </p>
-                          <p>
-                            Your credit/debit card will be temporarily
-                            authorized for $35. Your statement will reflect the
-                            final order total after order completion.
-                          </p>
-                          <p>
-                            Learn more A bag fee may be added to your final
-                            total if required by law or the retailer. The fee
-                            will be visible on your receipt after delivery.
-                          </p>
-                          <p className="oranged">Learn more about pricing</p>
                         </div>
                       </div>
                     </div>

@@ -1,4 +1,8 @@
 @import "../../helpers/responsiveBreakpointsMixins.scss";
+
+.cursorPointer {
+  cursor: pointer;
+}
 .Checkout {
   & .responsiveRow {
     @include large {
