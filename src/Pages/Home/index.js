@@ -226,7 +226,7 @@ class Home extends Component {
                                 <div className="categoryBoxesHomeImageWrapper">
                                   <img
                                     alt=""
-                                    src={`http://3.80.123.181${item.image}`}
+                                    src={`https://3.80.123.181${item.image}`}
                                     className="home__postsSection__categoryBoxes__imageBox__image"
                                   />
                                 </div>
@@ -300,7 +300,7 @@ class Home extends Component {
                               <div className="RecommendedItemsBoxBasketAddNewImageBox">
                                 <div
                                   style={{
-                                    backgroundImage: `url(${`http://3.80.123.181${item.item_image[0].path}`})`,
+                                    backgroundImage: `url(${`https://3.80.123.181${item.item_image[0].path}`})`,
                                     backgroundSize: "cover",
                                     backgroundPosition: "center",
                                   }}

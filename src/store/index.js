@@ -87,6 +87,18 @@ let store = {
       errorMessageBuilder
     );
   },
+  async getFoodItemsSearch(payload) {
+    let baseUrl = config.baseUrl;
+    let path = `/autocomplete-search`;
+    let tokenCookieName = "token";
+    return await http.makePostRequest(
+      path,
+      baseUrl,
+      tokenCookieName,
+      payload,
+      errorMessageBuilder
+    );
+  },
   async placeOrder(orderObject) {
     let baseUrl = config.baseUrl;
     let path = `/place-order`;

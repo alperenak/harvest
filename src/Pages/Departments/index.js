@@ -8,7 +8,7 @@ import LoadingModal from "../../Components/LoadingModal";
 import store from "../../store";
 import { getCookie } from "../../utils/cookie";
 
-import styles from "./departments.scss";
+import "./departments.scss";
 
 class Departments extends Component {
   state = {
@@ -74,6 +74,15 @@ class Departments extends Component {
         myObject,
         getCookie("slug") ? getCookie("slug") : 1
       );
+      let payload = {
+        q,
+        restaurant_id: getCookie("slug"),
+        isVintage: false,
+      };
+      await store.getFoodItemsSearch(payload).then((data) => {
+        console.log(data);
+        alert("data consolda");
+      });
       if (res2) {
         if (sub === false) {
           this.setState({

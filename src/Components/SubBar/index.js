@@ -52,7 +52,7 @@ class SubBar extends Component {
       };
     } else {
       var payload = {
-        zipcode: 77494,
+        zipcode: getCookie("zipcode"),
         isVintage: true,
       };
     }
