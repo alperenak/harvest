@@ -73,7 +73,7 @@ class Home extends Component {
         var myObject = {};
         myObject.id = item.id;
         myObject.name = item.name;
-        myObject.image = item.item_image[0].path;
+        myObject.image = item?.item_image[0]?.path;
         myObject.quantity = 1;
         myObject.price = item.price;
         cartItems.push(myObject);
@@ -84,7 +84,7 @@ class Home extends Component {
       var myObject = {};
       myObject.id = item.id;
       myObject.name = item.name;
-      myObject.image = item.item_image[0].path;
+      myObject.image = item?.item_image[0]?.path;
       myObject.quantity = 1;
       myObject.price = item.price;
       objectArray.push(myObject);
@@ -300,7 +300,7 @@ class Home extends Component {
                               <div className="RecommendedItemsBoxBasketAddNewImageBox">
                                 <div
                                   style={{
-                                    backgroundImage: `url(${`https://3.80.123.181${item.item_image[0].path}`})`,
+                                    backgroundImage: `url(${`https://3.80.123.181${item?.item_image[0]?.path}`})`,
                                     backgroundSize: "cover",
                                     backgroundPosition: "center",
                                   }}
