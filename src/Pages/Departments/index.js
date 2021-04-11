@@ -113,7 +113,7 @@ class Departments extends Component {
         var myObject = {
           q,
           page: 1,
-          category: -1,
+          category: res.data.mainCategories[0].id,
         };
       } else {
         var q = "";
@@ -126,6 +126,7 @@ class Departments extends Component {
         var myObject = {
           q,
           page: 1,
+          category: res.data.mainCategories[0].id,
         };
       }
       this.setState({
