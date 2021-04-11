@@ -129,7 +129,7 @@ class TopBar extends Component {
             </div>
             {/* </div> */}
             <div className="col-lg-6  col-md-6 col-xs-12 linksSearch">
-              <div className={"topBar__links"}>
+              {/* <div className={"topBar__links"}>
                 <div className={"topBar__inputWrapper"}>
                   <img
                     src={SearchIcon}
@@ -151,7 +151,7 @@ class TopBar extends Component {
                     />
                   </form>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="col-lg-4 col-md-4 col-xs-7 topBar__rightSide">
               <div className={"topBar__links"}>

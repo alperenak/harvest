@@ -57,6 +57,7 @@ class SubBar extends Component {
       };
     }
     let res = await store.getRestaurant(payload);
+    console.log(res);
     setCookie("slug", res.data.restaurants.slug, {});
     if (res.data?.vintageItems && res.data.vintageItems.length > 0) {
       this.setState({ vintageShow: true });

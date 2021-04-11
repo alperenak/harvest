@@ -5,7 +5,24 @@ import Footer from "../../Components/Footer";
 import Button from "../../Components/Button";
 import LoadingModal from "../../Components/LoadingModal";
 import trash from "../../icons/trash.svg";
-import fruits from "../../assets/fruits.jpg";
+import BreadImage from "../../assets/bread.jpg";
+import GroceryImage from "../../assets/grocery.jpg";
+import ProduceImage from "../../assets/homeout.jpg";
+import HouseholdImage from "../../assets/household.jpg";
+import HomeOutdoorImage from "../../assets/homeout.jpg";
+import BabyCareImage from "../../assets/babycare.jpg";
+import DairyEggsImage from "../../assets/dairyeggs.jpg";
+import WineImage from "../../assets/wine.jpg";
+import MiquerenciaImage from "../../assets/mique.jpg";
+import BazaarIstanbulImage from "../../assets/bazaar.jpg";
+import ReadyToEatImage from "../../assets/readyeat.jpg";
+import InternationalImage from "../../assets/bread.jpg";
+import HealthyImage from "../../assets/healthy.jpg";
+import PetsImage from "../../assets/pets.jpg";
+import BeveragesImage from "../../assets/beverages.jpg";
+import FrozenImage from "../../assets/frozenfoods.jpg";
+import MeatsImage from "../../assets/meats.jpg";
+import FruitsImage from "../../assets/fruits.jpg";
 import karefoto from "../../assets/karefoto.jpg";
 import gutShots from "../../assets/gut_shots.jpg";
 import viewMore from "../../icons/view-more-icon.svg";
@@ -124,6 +141,46 @@ class Home extends Component {
       return 0;
     }
   }
+
+  getItemImageSources = ({ itemName }) => {
+    if (itemName.includes("Bakery")) {
+      return BreadImage;
+    } else if (itemName.includes("Grocery")) {
+      return GroceryImage;
+    } else if (itemName.includes("Deli")) {
+      return MeatsImage;
+    } else if (itemName.includes("Produce")) {
+      return ProduceImage;
+    } else if (itemName.includes("Meat")) {
+      return MeatsImage;
+    } else if (itemName.includes("Dairy")) {
+      return DairyEggsImage;
+    } else if (itemName.includes("Frozen")) {
+      return FrozenImage;
+    } else if (itemName.includes("Beverages")) {
+      return BeveragesImage;
+    } else if (itemName.includes("Household")) {
+      return HouseholdImage;
+    } else if (itemName.includes("Pets")) {
+      return PetsImage;
+    } else if (itemName.includes("Health")) {
+      return HealthyImage;
+    } else if (itemName.includes("Outdoor")) {
+      return HomeOutdoorImage;
+    } else if (itemName.includes("Baby Care")) {
+      return BabyCareImage;
+    } else if (itemName.includes("Mi Querencia")) {
+      return MiquerenciaImage;
+    } else if (itemName.includes("Bazaar")) {
+      return BazaarIstanbulImage;
+    } else if (itemName.includes("Ready")) {
+      return ReadyToEatImage;
+    } else if (itemName.includes("International")) {
+      return InternationalImage;
+    } else if (itemName.includes("Wine")) {
+      return WineImage;
+    }
+  };
   render() {
     const catOptions = {
       items: 5,
@@ -226,7 +283,14 @@ class Home extends Component {
                                 <div className="categoryBoxesHomeImageWrapper">
                                   <img
                                     alt=""
-                                    src={`https://3.80.123.181${item.image}`}
+                                    // `https://3.80.123.181${item.image}`
+                                    src={
+                                      item.image && item.image !== ""
+                                        ? `https://3.80.123.181${item.image}`
+                                        : this.getItemImageSources({
+                                            itemName: item.name,
+                                          })
+                                    }
                                     className="home__postsSection__categoryBoxes__imageBox__image"
                                   />
                                 </div>

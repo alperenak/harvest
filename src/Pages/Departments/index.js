@@ -22,8 +22,10 @@ class Departments extends Component {
   async componentDidMount() {
     if (this.props.match.params.id !== undefined) {
       this.handleClick("", this.props.match.params.id, false);
+      alert("handle clickteyium buradayim");
     } else {
       console.log(this.props.match.params.query);
+      alert("buradayim");
       await this.getItems();
     }
     window.scrollTo(0, 0);
@@ -114,7 +116,7 @@ class Departments extends Component {
         var myObject = {
           q,
           page: 1,
-          category: res.data.mainCategories[0].id,
+          category: -1,
         };
       } else {
         var q = "";
