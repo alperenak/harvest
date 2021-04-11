@@ -22,10 +22,8 @@ class Departments extends Component {
   async componentDidMount() {
     if (this.props.match.params.id !== undefined) {
       this.handleClick("", this.props.match.params.id, false);
-      alert("handle clickteyium buradayim");
     } else {
       console.log(this.props.match.params.query);
-      alert("buradayim");
       await this.getItems();
     }
     window.scrollTo(0, 0);
@@ -83,7 +81,6 @@ class Departments extends Component {
       };
       await store.getFoodItemsSearch(payload).then((data) => {
         console.log(data);
-        alert("data consolda");
       });
       if (res2) {
         if (sub === false) {
