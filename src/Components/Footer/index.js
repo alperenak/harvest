@@ -23,60 +23,6 @@ class Footer extends Component {
         <div className="container">
           <div className={"footerSection__footerTop"}>
             <div className="row footerRow">
-              <div className="col-xl-12 col-xs-12 col-lg-12 col-12">
-                <div className={"footerSection__options"}>
-                  <div className="row">
-                    <div className="col-md-6 responsiveColFooter">
-                      <div
-                        className={"footerSection__options__sectionDivOther"}
-                      >
-                        <img
-                          src={insurance}
-                          alt={insurance}
-                          className={"footerSection__options__sectionImage"}
-                        />
-                        <h2
-                          className={"footerSection__options__sectionMidTitle"}
-                        >
-                          Can't find what you are looking for? Don’t worry, our
-                          support team will help you :)
-                        </h2>
-                      </div>
-                    </div>
-                    <div className="col-md-6 responsiveColFooter">
-                      <div
-                        className={
-                          "footerSection__options__sectionDiv float-right"
-                        }
-                      >
-                        <div
-                          className={
-                            "footerSection__options__inputWrapper mt-3 mb-3"
-                          }
-                        >
-                          <img
-                            src={at}
-                            alt={at}
-                            className={"footerSection__options__inputIcon"}
-                          />
-                          <input
-                            type="text"
-                            placeholder="mail@gmail.com"
-                            className={"footerSection__options__input "}
-                          />
-                          <img
-                            src={send}
-                            alt={send}
-                            className={"footerSection__options__inputIcon2"}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="row footerRow">
               <div className="col-xl-12 col-lg-12 col-xs-12 col-12">
                 <div className={"footerSection__options"}>
                   <div className="row">
