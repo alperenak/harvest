@@ -354,36 +354,7 @@ class TopBar extends Component {
                                 </div>
                               </Link>
                             </li>
-                            <li
-                              onClick={() => {
-                                setTimeout(() => {
-                                  this.setState({
-                                    isOpenDropdown: false,
-                                  });
-                                }, 220);
-                                this.setState({ ourDropdown: false });
-                              }}
-                            >
-                              <Link to="/Notifications">
-                                <div className={"dropDownImage"}>
-                                  <NotificationIcon
-                                    className={
-                                      pathname.includes("Notifications")
-                                        ? "activeDropdownIcon"
-                                        : "topBarDropdownImage"
-                                    }
-                                  />
-                                </div>
-                                <div
-                                  className={`title ${
-                                    pathname.includes("Notifications") &&
-                                    "active"
-                                  }`}
-                                >
-                                  Notification
-                                </div>
-                              </Link>
-                            </li>
+
                             <li
                               onClick={() => {
                                 this.setState({ ourDropdown: false });
@@ -409,45 +380,8 @@ class TopBar extends Component {
                                     pathname.includes("Gifts") && "active"
                                   }`}
                                 >
-                                  Credits, promos & gift cards
+                                  Promotions
                                 </div>
-                              </Link>
-                            </li>
-                            <li></li>
-                            <li
-                              onClick={() => {
-                                this.setState({ ourDropdown: false });
-                                setTimeout(() => {
-                                  this.setState({
-                                    isOpenDropdown: false,
-                                  });
-                                }, 220);
-                              }}
-                            >
-                              <Link>
-                                <div className={"dropDownImage"}>
-                                  <InviteFriendsIcon
-                                    className={"topBarDropdownImage"}
-                                  />
-                                </div>
-                                <div className={`title`}>Invite Friends</div>
-                              </Link>
-                            </li>
-                            <li
-                              onClick={() => {
-                                setTimeout(() => {
-                                  this.setState({
-                                    isOpenDropdown: false,
-                                  });
-                                }, 220);
-                                this.setState({ ourDropdown: false });
-                              }}
-                            >
-                              <Link>
-                                <div className={"dropDownImage"}>
-                                  <HelpIcon className={"topBarDropdownImage"} />
-                                </div>
-                                <div className={"title"}>Help</div>
                               </Link>
                             </li>
                             <li></li>

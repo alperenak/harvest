@@ -99,26 +99,7 @@ export default class SideMenuBar extends React.Component {
                   </div>
                 </Link>
               </li>
-              <li className="sideBarMenuTitleWrapper">
-                <Link to="/Notifications">
-                  <div className={"dropDownImage"}>
-                    <NotificationIcon
-                      className={`topBarDropdownImage ${
-                        pathname.includes("Notifications") &&
-                        "sideMenuIconActive"
-                      } `}
-                    />
-                  </div>
-                  <div
-                    className={`sideMenuTitle ${
-                      pathname.includes("Notifications") &&
-                      "sideMenuTitleActive"
-                    }`}
-                  >
-                    Notification
-                  </div>
-                </Link>
-              </li>
+
               <li className="sideBarMenuTitleWrapper">
                 <Link to="/Gifts">
                   <div className={"dropDownImage"}>
@@ -133,27 +114,11 @@ export default class SideMenuBar extends React.Component {
                       pathname.includes("Gifts") && "sideMenuTitleActive"
                     }`}
                   >
-                    Credits, promos & gift cards
+                    Promotions
                   </div>
                 </Link>
               </li>
               <li className="sideBarMenuTitleWrapper"></li>
-              <li className="sideBarMenuTitleWrapper">
-                <Link>
-                  <div className={"dropDownImage"}>
-                    <InviteFriendsIcon className={`topBarDropdownImage`} />
-                  </div>
-                  <div className={`sideMenuTitle`}>Invite Friends</div>
-                </Link>
-              </li>
-              <li className="sideBarMenuTitleWrapper">
-                <Link to="#">
-                  <div className={"dropDownImage"}>
-                    <HelpIcon className={`topBarDropdownImage `} />
-                  </div>
-                  <div className={`sideMenuTitle`}>Help</div>
-                </Link>
-              </li>
               <li className="sideBarMenuTitleWrapper"></li>
               <li className="sideBarMenuTitleWrapper">
                 <Link to="/Login">

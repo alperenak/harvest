@@ -11,6 +11,7 @@ import inviteFriendsIcon from "../../icons/invite-friends-icon.svg";
 import helpIcon from "../../icons/help-icon.svg";
 import logoutIcon from "../../icons/logout-icons.svg";
 import meats from "../../assets/meats.jpg";
+import requestNowIcon from "../../icons/request-now-icon.svg";
 import downArrowIcon from "../../icons/down-arrow.svg";
 import LoadingModal from "../../Components/LoadingModal";
 import store from "../../store";
@@ -179,7 +180,7 @@ class Orders extends Component {
                           <>
                             <div className="Orders__block__deliveryItem">
                               <div className="Orders__block__deliveryItem__input">
-                                <img src={meats} />
+                                <img src={requestNowIcon} />
                               </div>
                               <div className="Orders__block__deliveryItem__text">
                                 {item.unique_order_id}

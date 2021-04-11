@@ -139,7 +139,7 @@ class Gifts extends Component {
                                 alt={inviteFriendsIcon}
                               />
                             </div>
-                            <div className={"menuTitle"}>Invite Friends</div>
+                            <div className={"menuTitle"}>Friends</div>
                           </Link>
                         </li>
                         <li className="sideBarMenuTitleWrapper">
